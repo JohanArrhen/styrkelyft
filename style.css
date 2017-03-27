@@ -1,0 +1,45 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+/* 
+Rubrik: Stencil Std
+Meny: Tempus Sans ITC (Neucha från google fonts)
+
+
+*/
+
+
+
+@font-face {
+    font-family: 'stencilregular';
+    src: url('fonter/stencil-webfont.woff2') format('woff2'),
+         url('fonter/stencil-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+h1 {
+	font-family: stencilregular;
+	font-size: 36px;
+	color: red;	
+}
+#menu {
+	list-style-type: none;	
+	
+}
+
+
+#menu li a {
+	font-family: 'Neucha', cursive;	
+	float: left; 
+	display:block;
+	margin: 0 10px 0 10px;
+	color: black;
+	
+	
+}
+#menu li a:hover {
+	text-decoration: underline;
+	color: red;
+}
