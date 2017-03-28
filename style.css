@@ -2,7 +2,7 @@
 /* CSS Document */
 
 
-/* 
+/*
 Rubrik: Stencil Std
 Meny: Tempus Sans ITC (Neucha från google fonts)
 
@@ -19,27 +19,82 @@ Meny: Tempus Sans ITC (Neucha från google fonts)
     font-style: normal;
 
 }
+*{
+  margin: 0;
+  padding: 0;
+  background-color: pink;
+}
+
+#storbox{
+
+  height: 100%;
+  width: 100%;
+  position: absolute;
+
+}
+
 h1 {
 	font-family: stencilregular;
-	font-size: 36px;
-	color: red;	
+	font-size: 50px;
+	color: red;
+  height: 100%;
+  /*border: 1px solid green;*/
+
+  /*padding-left: 10%;*/
+
+
 }
 #menu {
-	list-style-type: none;	
-	
+	list-style-type: none;
+
+
 }
 
 
 #menu li a {
-	font-family: 'Neucha', cursive;	
-	float: left; 
+	font-family: 'Neucha', cursive;
+	float: left;
 	display:block;
 	margin: 0 10px 0 10px;
 	color: black;
-	
-	
+  display: block;
+
+
+
 }
 #menu li a:hover {
 	text-decoration: underline;
 	color: red;
+}
+
+
+/*Header och nav*/
+#topp {
+  height: 50px;
+  width: 100%;
+  border-bottom: 3px solid red;
+  /*overflow: hidden;*/
+
+}
+
+header {
+  height:100%;
+  width: 50%;
+  border: 1px solid black;
+  float: left;
+  /*width: 55%;*/
+  display: block;
+}
+
+#bankpressSvartvit{
+  height: 100%;
+  float: left;
+  border: 1px solid #000;
+}
+
+nav {
+  height: 100%;
+  /*width: 50%;*/
+  border: 1px solid red;
+  float: right;
 }
