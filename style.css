@@ -22,7 +22,7 @@ Meny: Tempus Sans ITC (Neucha från google fonts)
 *{
   margin: 0;
   padding: 0;
-  background-color: pink;
+  
 }
 
 #storbox{
@@ -44,25 +44,47 @@ h1 {
 
 
 }
-#menu {
+#meny {/* det är en ul*/
 	list-style-type: none;
+	border: 1px solid black;
+	width: 100%;
+	/*parent till li*/
+	display: flex;
+	justify-content: flex-end;	
 
 
 }
+#meny li { 
+	
+
+	
+	max-width: 130px;
+	flex-grow: 1;
+	/*max-width: 70px;			a kommer inte länger i mitten då */
+	
+	/*parent till meny li a*/
+	display: flex;
+	justify-content: center;
+	
+	
+		
+}
 
 
-#menu li a {
+#meny li a {
 	font-family: 'Neucha', cursive;
-	float: left;
-	display:block;
-	margin: 0 10px 0 10px;
+	/*float: left;*/
+	
+	border: 1px solid yellow;
 	color: black;
-  display: block;
+	
+	
+  	
 
 
 
 }
-#menu li a:hover {
+#meny li a:hover {
 	text-decoration: underline;
 	color: red;
 }
@@ -73,28 +95,47 @@ h1 {
   height: 50px;
   width: 100%;
   border-bottom: 3px solid red;
+  display: flex;
+  flex-wrap: wrap;
   /*overflow: hidden;*/
 
+}
+#bankpressSvartvit{
+  height: 100%;
+  float: left;
+/*  border: 1px solid #000;*/
 }
 
 header {
   height:100%;
   width: 50%;
-  border: 1px solid black;
+ /* border: 1px solid black;*/
   float: left;
   /*width: 55%;*/
-  display: block;
+  flex-grow: 1,5;
+  min-width: 400px;
 }
 
-#bankpressSvartvit{
-  height: 100%;
-  float: left;
-  border: 1px solid #000;
-}
+
 
 nav {
   height: 100%;
   /*width: 50%;*/
-  border: 1px solid red;
+ /* border: 1px solid red;*/
   float: right;
+  flex-grow: 1;
+  
+  /*som parent*/
+  display: flex;
+}
+
+@media screen and (max-width: 480px) {
+	#bankpressSvartvit{
+  		position: absolute;
+		height: 0;
+		width: 0;
+		
+}
+		
+	
 }
