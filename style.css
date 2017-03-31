@@ -22,7 +22,7 @@ Meny: Tempus Sans ITC (Neucha från google fonts)
 *{
   margin: 0;
   padding: 0;
-  
+
 }
 
 #storbox{
@@ -40,46 +40,46 @@ h1 {
   height: 100%;
   /*border: 1px solid green;*/
 
-  /*padding-left: 10%;*/
+
 
 
 }
 #meny {/* det är en ul*/
 	list-style-type: none;
-	border: 1px solid black;
+	/*border: 1px solid black;*/
 	width: 100%;
 	/*parent till li*/
 	display: flex;
-	justify-content: flex-end;	
+	justify-content : flex-end; /*li lägger sig till höger när max-width är uppfyllt*/
 
 
 }
-#meny li { 
-	
+#meny li {
 
-	
-	max-width: 130px;
+
+
+	max-width: 110px;
 	flex-grow: 1;
 	/*max-width: 70px;			a kommer inte länger i mitten då */
-	
+
 	/*parent till meny li a*/
 	display: flex;
-	justify-content: center;
-	
-	
-		
+	justify-content: center; /* lägger länken i mitten så att det blir jämt avstånd mellan dem */
+
+
+
 }
 
 
 #meny li a {
 	font-family: 'Neucha', cursive;
 	/*float: left;*/
-	
+
 	border: 1px solid yellow;
 	color: black;
-	
-	
-  	
+
+
+
 
 
 
@@ -97,6 +97,7 @@ h1 {
   border-bottom: 3px solid red;
   display: flex;
   flex-wrap: wrap;
+  align-items: flex-end; /*sätter nav i botten av #topp */
   /*overflow: hidden;*/
 
 }
@@ -119,12 +120,12 @@ header {
 
 
 nav {
-  height: 100%;
+  height: 50%;
   /*width: 50%;*/
  /* border: 1px solid red;*/
   float: right;
   flex-grow: 1;
-  
+
   /*som parent*/
   display: flex;
 }
@@ -134,8 +135,8 @@ nav {
   		position: absolute;
 		height: 0;
 		width: 0;
-		
+
 }
-		
-	
+
+
 }
