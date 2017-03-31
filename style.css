@@ -44,50 +44,6 @@ h1 {
 
 
 }
-#meny {/* det är en ul*/
-	list-style-type: none;
-	/*border: 1px solid black;*/
-	width: 100%;
-	/*parent till li*/
-	display: flex;
-	justify-content : flex-end; /*li lägger sig till höger när max-width är uppfyllt*/
-
-
-}
-#meny li {
-
-
-
-	max-width: 110px;
-	flex-grow: 1;
-	/*max-width: 70px;			a kommer inte länger i mitten då */
-
-	/*parent till meny li a*/
-	display: flex;
-	justify-content: center; /* lägger länken i mitten så att det blir jämt avstånd mellan dem */
-
-
-
-}
-
-
-#meny li a {
-	font-family: 'Neucha', cursive;
-	/*float: left;*/
-
-	border: 1px solid yellow;
-	color: black;
-
-
-
-
-
-
-}
-#meny li a:hover {
-	text-decoration: underline;
-	color: red;
-}
 
 
 /*Header och nav*/
@@ -109,10 +65,9 @@ h1 {
 
 header {
   height:100%;
-  width: 50%;
- /* border: 1px solid black;*/
-  float: left;
-  /*width: 55%;*/
+  /*width: 50%;      behövs inte..?*/
+
+  /*float: left;*    behövs inte...?*/
   flex-grow: 1,5;
   min-width: 400px;
 }
@@ -122,13 +77,63 @@ header {
 nav {
   height: 50%;
   /*width: 50%;*/
- /* border: 1px solid red;*/
-  float: right;
-  flex-grow: 1;
 
+  flex-grow: 1;
   /*som parent*/
   display: flex;
+  justify-content : flex-end; /* #meny lägger sig till höger*/
+
 }
+
+#meny {/* det är en ul*/
+	list-style-type: none;
+	width: 350px;
+	/*parent till li*/
+	display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+
+
+
+
+}
+#meny li {
+
+/*Länken fyller ut hela*/
+
+
+}
+
+
+#meny li a {
+	font-family: 'Neucha', cursive;
+	/*float: left;*/
+  font-size: 22px;
+  line-height: 100%;
+	color: black;
+
+
+
+
+
+/*Effekt*/
+}
+#meny li a:hover {
+	text-decoration: underline;
+	color: red;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 @media screen and (max-width: 480px) {
 	#bankpressSvartvit{
