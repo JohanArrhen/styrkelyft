@@ -38,11 +38,6 @@ h1 {
 	font-size: 50px;
 	color: red;
   height: 100%;
-  /*border: 1px solid green;*/
-
-
-
-
 }
 
 
@@ -55,11 +50,13 @@ h1 {
   flex-wrap: wrap;
   align-items: flex-end; /*sätter nav i botten av #topp */
   /*overflow: hidden;*/
+  position: fixed;
+  background-color: white;
 
 }
 #bankpressSvartvit{
-  height: 100%;
-  float: left;
+  height: 90%;
+  padding-right: 10px;
 /*  border: 1px solid #000;*/
 }
 
@@ -70,13 +67,18 @@ header {
   /*float: left;*    behövs inte...?*/
   flex-grow: 1,5;
   min-width: 400px;
+
+  /*parent till img och bankpresssvartvit*/
+  display: flex;
+  align-items: flex-end; /*lägger bänken längst ner*/
 }
 
 
 
 nav {
-  height: 50%;
+  /*height: 50%; onödig då det är länkarna som bestämmer höjden*/
   /*width: 50%;*/
+  padding-bottom: 2px;
 
   flex-grow: 1;
   /*som parent*/
@@ -91,7 +93,7 @@ nav {
 	/*parent till li*/
 	display: flex;
   justify-content: space-around;
-  align-items: flex-end;
+  align-items: flex-end; /*lägger menyn längst ner*/
 
 
 
@@ -124,7 +126,10 @@ nav {
 }
 
 
+article{
+  padding-top: 50px;
 
+}
 
 
 
