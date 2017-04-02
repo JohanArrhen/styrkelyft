@@ -23,6 +23,8 @@ Meny: Tempus Sans ITC (Neucha från google fonts)
   margin: 0;
   padding: 0;
 
+
+
 }
 
 #storbox{
@@ -37,7 +39,9 @@ h1 {
 	font-family: stencilregular;
 	font-size: 50px;
 	color: red;
-  height: 100%;
+  /*line-height: 0.75em;*/
+  line-height: 1ex;
+  border: 1px solid #000;
 }
 
 
@@ -62,9 +66,6 @@ h1 {
 
 header {
   height:100%;
-  /*width: 50%;      behövs inte..?*/
-
-  /*float: left;*    behövs inte...?*/
   flex-grow: 1,5;
   min-width: 400px;
 
@@ -114,7 +115,7 @@ nav {
   line-height: 100%;
 	color: black;
 
-
+}
 
 
 
@@ -132,21 +133,44 @@ article{
 }
 
 
-
-
-
-
-
-
-
-
-@media screen and (max-width: 480px) {
+@media screen and (max-height: 400px) {
 	#bankpressSvartvit{
-  		position: absolute;
+  	/*position: absolute;*/
+		/*height: 0;*/
+		/*width: 0;*/
+
+}
+
+#topp{
+  height: 30px;
+}
+h1{
+  font-size: 30px;
+
+}
+article{
+  padding-top: 30px;
+
+}
+#meny li a{
+  font-size: 20px;
+
+}
+nav{
+  padding-bottom: 1px;
+
+}
+}
+
+
+
+
+@media screen and (max-width: 80px) {
+	#bankpressSvartvit{
+  	position: absolute;
 		height: 0;
 		width: 0;
 
 }
-
 
 }
