@@ -19,12 +19,13 @@ Meny: Tempus Sans ITC (Neucha från google fonts)
     font-style: normal;
 
 }
+html{
+  font-size: 62.5%;
+
+}
 *{
   margin: 0;
   padding: 0;
-
-
-
 }
 
 #storbox{
@@ -32,24 +33,17 @@ Meny: Tempus Sans ITC (Neucha från google fonts)
   height: 100%;
   width: 100%;
   position: absolute;
-
 }
 
-h1 {
-	font-family: stencilregular;
-	font-size: 50px;
-	color: red;
-  /*line-height: 0.75em;*/
-  line-height: 1ex;
-  border: 1px solid #000;
-}
-
-
-/*Header och nav*/
+/*Rubrik + Meny*/
 #topp {
-  height: 50px;
+  height: 60px;
+  height: 6rem;
+
+
   width: 100%;
   border-bottom: 3px solid red;
+  border-bottom: 0.3rem solid red;
   display: flex;
   flex-wrap: wrap;
   align-items: flex-end; /*sätter nav i botten av #topp */
@@ -58,28 +52,42 @@ h1 {
   background-color: white;
 
 }
-#bankpressSvartvit{
-  height: 90%;
-  padding-right: 10px;
-/*  border: 1px solid #000;*/
-}
 
+
+/**    Rubrik     **/
 header {
   height:100%;
   flex-grow: 1,5;
   min-width: 400px;
+  min-width: 40rem;
 
   /*parent till img och bankpresssvartvit*/
   display: flex;
   align-items: flex-end; /*lägger bänken längst ner*/
 }
 
+#bankpressSvartvit{
+  height: 90%;
+  padding-right: 10px;
+  padding-right: 1rem;
+}
+
+#huvudrubrik {
+	font-family: stencilregular;
+	/*font-size: 50px;*/
+  font-size: 6rem;
+  box-sizing: border-box;
+	color: red;
+  line-height: 75%;
+}
 
 
+/**    Meny:   **/
 nav {
-  /*height: 50%; onödig då det är länkarna som bestämmer höjden*/
-  /*width: 50%;*/
+
   padding-bottom: 2px;
+  padding-bottom: 0.2rem;
+  padding-bottom: 0;
 
   flex-grow: 1;
   /*som parent*/
@@ -91,54 +99,50 @@ nav {
 #meny {/* det är en ul*/
 	list-style-type: none;
 	width: 350px;
+  width: 35rem;
 	/*parent till li*/
 	display: flex;
   justify-content: space-around;
   align-items: flex-end; /*lägger menyn längst ner*/
-
-
-
-
-}
-#meny li {
-
-/*Länken fyller ut hela*/
-
-
 }
 
-
-#meny li a {
+.menylank {
 	font-family: 'Neucha', cursive;
-	/*float: left;*/
   font-size: 22px;
-  line-height: 100%;
+  font-size: 2.2rem;
 	color: black;
+  text-decoration: none;
 
 }
+.menylank:hover {
+  text-decoration: underline;
 
 
-
-/*Effekt*/
 }
-#meny li a:hover {
-	text-decoration: underline;
-	color: red;
+#aktiv{
+  color: red;
+  text-decoration: underline;
+  font-weight: bold;
 }
 
 
 article{
   padding-top: 50px;
+  padding-top: 5rem;
+
+}
+p {
+  font-size: 2rem;
 
 }
 
-
-@media screen and (max-height: 400px) {
+/*@media screen and (max-height: 400px) {
 	#bankpressSvartvit{
   	/*position: absolute;*/
 		/*height: 0;*/
 		/*width: 0;*/
 
+/*
 }
 
 #topp{
@@ -174,4 +178,4 @@ nav{
 
 }
 
-}
+}*/
