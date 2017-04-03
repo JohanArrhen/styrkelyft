@@ -21,7 +21,6 @@ Meny: Tempus Sans ITC (Neucha från google fonts)
 }
 html{
   font-size: 62.5%;
-
 }
 *{
   margin: 0;
@@ -136,46 +135,30 @@ p {
 
 }
 
-/*@media screen and (max-height: 400px) {
-	#bankpressSvartvit{
-  	/*position: absolute;*/
-		/*height: 0;*/
-		/*width: 0;*/
+@media screen and (max-width: 400px) {
 
-/*
-}
+  html{
+    font-size: 50%;
 
-#topp{
-  height: 30px;
 
-}
-h1{
-  font-size: 30px;
+  }
+  #bankpressSvartvit{
+    height: 0;
+    width: 0;
+  }
+  #topp{
+    align-items: center;
+  }
+  header{
+    display: block;
+    width: 100%;
+    text-align: center;
+    border: 1px solid #000;
+  }
+  #huvudrubrik{
 
-}
-article{
-  padding-top: 30px;
+  }
 
-}
-#meny li a{
-  font-size: 20px;
 
-}
-nav{
-  padding-bottom: 1px;
 
 }
-}
-
-
-
-
-@media screen and (max-width: 80px) {
-	#bankpressSvartvit{
-  	position: absolute;
-		height: 0;
-		width: 0;
-
-}
-
-}*/
