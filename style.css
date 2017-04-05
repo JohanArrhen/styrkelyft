@@ -44,7 +44,7 @@ html{
   border-bottom: 3px solid red;
   border-bottom: 0.3rem solid red;
   display: flex;
-  flex-wrap: wrap;
+  /*flex-wrap: wrap;*/
   align-items: flex-end; /*sätter nav i botten av #topp */
   /*overflow: hidden;*/
   position: fixed;
@@ -134,12 +134,12 @@ p {
 
 }
 
-@media screen and (max-width: 768px) { /*Surfplatta*/
+@media screen and (max-width: 768px) { /*Surfplatta*/}
 @media screen and (max-width: 480px) { /*Mobil*/
 
 
   html{
-    font-size: 60%;
+    font-size: 40%;
 
 
 
@@ -147,16 +147,85 @@ p {
   #bankpressSvartvit{
     height: 0;
     width: 0;
+    padding: 0;
   }
   #topp{
-    align-items: center;
+    height: auto;
+    width: 100%;
+    display: inline;
+    border-bottom: none;
+
+
+
+
+    /*align-items: center;*/
 
   }
   header{
     display: block;
-    width: 100%;
+    width: 90%;
+    min-width: 0;
+    flex-grow: 0;
     text-align: center;
+    padding: 4px;
+
+    align-items: stretch;
+    float: left;
+    box-sizing: border-box;
+    border-bottom: 2px solid red;
+    border-bottom: 0.2rem solid red;
     border: 1px solid #000;
+
+
+
+
+
+  }
+  button{
+    float: left;
+    width: 10%;
+    padding: 20px;
+    display: inline;
+
+
+  }
+  #meny { /* är en ul*/
+    display: block;
+    width: 100%;
+
+
+
+
+
+  }
+  nav{
+    float: left;
+    display: inline; /*tar bort display: block*/
+    width: 100%;
+
+  }
+  .menylank {
+    float: left; /* gör att width 100% fungerar*/
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+    /*border: 2px solid red;
+    border-top: 0;
+    */
+    border-bottom: 2px solid red;
+
+    background-color: white;
+    margin: 0;
+    padding: 3px;
+
+
+    font-size: 22px;
+    font-size: 2.2rem;
+  	color: black;
+    text-decoration: none;
+
+    font-size: 30px;
+    font-size: 3rem;
   }
 
   p{
