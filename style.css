@@ -79,6 +79,11 @@ header {
 	color: red;
   line-height: 75%;
 }
+#menyknapp{
+  height: 0;
+  width: 0;
+
+}
 
 
 /**    Meny:   **/
@@ -154,20 +159,24 @@ p {
   header{
 
     width: 100%;
-    padding: 4px;
+    padding: 6px;
 
 
     border-bottom: 2px solid red;
     border-bottom: 0.2rem solid red;
 
-    justify-content: center;
+    /*justify-content: center;*/
   }
   #bankpressSvartvit{
-    height: 0;
-    width: 0;
-    padding: 0;
+    height: 0rem;
+    /*width: 0;
+    padding: 0;*/
   }
   #huvudrubrik{
+
+  }
+  #menyknapp{
+    height: 6rem;
 
   }
 
@@ -185,6 +194,11 @@ p {
     display: inline; /*tar bort display: block*/
     width: 100%;
 
+
+  }
+  .stangd{
+    height: 0;
+    overflow: hidden;
   }
   .menylank {
     float: left; /* gör att width 100% fungerar*/
@@ -197,6 +211,7 @@ p {
     background-color: white;
     margin: 0;
     padding: 3px;
+    /*padding: 0.3rem;*/
 
 
     font-size: 22px;
@@ -204,8 +219,8 @@ p {
   	color: black;
     text-decoration: none;
 
-    font-size: 30px;
-    font-size: 3rem;
+    /*font-size: 30px;*/
+    font-size: 4rem;
   }
 
   p{
