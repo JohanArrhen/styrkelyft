@@ -1,6 +1,11 @@
 // JavaScript Document
 var storRubrik = true;
 window.onload = function() {
+	
+	$("#menyknapp").on("click", expandera);
+	
+	
+	
 
 
 
@@ -25,29 +30,16 @@ function toppHeight(){
   }
   if(scrollPosition < 200 && storRubrik != true){ //scrollat mindre än 200px men rubriken är inte stor
 
-    $("#huvudrubrik").animate({"font-size": "6rem"}, 100);
-    $("#topp").animate({"height": "6rem"}, 100);
-    storRubrik = true;
-  }
+			$("#huvudrubrik").animate({"font-size": "6rem"}, 100);
+			$("#topp").animate({"height": "6rem"}, 100);
+			storRubrik = true;
+  		}
+	}
 }
 
 
-
-
-
-
-
-  // if (scrollPosition === 200 || scrollPosition - 1 === ){
-  //   $("#topp").css("height", "30px");
-  //   // $("#huvudrubrik").css("font-size", 3 + "rem")
-  //   $("#huvudrubrik").animate({"font-size": "3rem"}, 1000);
-  //   // $("nav").css("padding-bottom", 0.2 + "rem")
-  // }else{
-  //   $("#topp").css("height", "60px");
-  //   // $("#huvudrubrik").css("font-size", 6 + "rem") //tilbaka till ursprungsläget
-  //   $("#huvudrubrik").animate({"font-size": "6rem"}, 1000);
-  //   // $("nav").css("padding-bottom", 0.4 + "rem")
-  // }
+function expandera() {
+	$("nav").toggleClass("stangd", 1000);	
 }
 
 
