@@ -19,6 +19,7 @@ Meny: Tempus Sans ITC (Neucha från google fonts)
     font-style: normal;
 
 }
+
 html{
   font-size: 62.5%;
 }
@@ -134,18 +135,26 @@ nav {
 }
 
 article{
-  padding-top: 50px;
-  padding-top: 5rem;
+	width: 100%;
+	height: 100%;
+ 	padding-top: 50px;
+  	padding-top: 5rem;
+ 	box-sizing:border-box;
 
 }
 
 p {
-  font-size: 2rem;
+  font-size: 2rem;	
 
 }
 #bildspel{
   /*width: 75%;*/
+	
+  width: 800px;
+  
+ 
 
+<<<<<<< HEAD
   width: 100%;
 
   border: 10px solid #000;
@@ -153,16 +162,32 @@ p {
   box-sizing: border-box;
   margin:auto;
   max-width: 900px;
+=======
+  border: 1px solid #000;
+  box-sizing: border-box;
+  margin:auto;
+  margin-top: 20px;
+>>>>>>> 80d2579a69f963104e1f9e6c2d00de40cbbda695
 }
-#bildspel img{
-  height: 100%;
+
+.inaktivBild{
+	width: 0%;	
+}
+.aktivBild{
+	width: 100%;
+}
+
+
+
+
+@media screen and (max-width: 800px) {/*Surfplatta*/
+#bildspel{
+  
   width: 100%;
+  
+	
+
 }
-
-
-
-
-@media screen and (max-width: 768px) { /*Surfplatta*/}
 @media screen and (max-width: 480px) { /*Mobil*/
 
 
