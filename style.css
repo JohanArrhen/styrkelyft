@@ -146,12 +146,13 @@ p {
 #bildspel{
   /*width: 75%;*/
 
-  width: 700px;
+  width: 100%;
 
   border: 10px solid #000;
-  margin-top: 20%;
+  margin-top: 700px;
   box-sizing: border-box;
   margin:auto;
+  max-width: 900px;
 }
 #bildspel img{
   height: 100%;
@@ -173,7 +174,9 @@ p {
     height: auto;
     border-bottom: none;
     padding-top: 2px;
+    box-sizing: border-box;
   }
+
 
   header{
 
@@ -189,14 +192,17 @@ p {
     /*height: 0rem;
     width: 0;
     padding: 0;*/
-	display: none;
+	  display: none;
   }
   #huvudrubrik{
 
   }
   #menyknapp{
-    height: 5rem;
-	width: 5rem;
+    height: 4rem;
+	  width: 4rem;
+    margin-right: 50px;
+
+
 
 
   }
@@ -213,7 +219,7 @@ p {
 
   .stangd{
     height: 0;
-	display: none;
+	  display: none;
     overflow: hidden;
   }
 
@@ -229,6 +235,7 @@ p {
     background-color: white;
     margin: 0;
     padding: 3px;
+
     /*padding: 0.3rem;*/
 
 
@@ -248,4 +255,10 @@ p {
   p{
     font-size: 30px;
   }
+
+  #bildspel{
+    width:
+  }
+
+
 }
