@@ -1,54 +1,70 @@
 // JavaScript Document
 var storRubrik = true;
 window.onload = function() {
-	
+
 	$("#menyknapp").on("click", expandera);
-	
-	
-	
-	
+
+
+
+
 	var bilder;
 	bilder =  $(".bildspel");
-	
-	
 
 
-	console.log(bilder[1]);
+
+
+	console.log(bilder);
 	//bildbyte
-	var i = 0;
+
 	$(bilder).on("click", bildByte);
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 };
 
+
+var i;
 function bildByte(){
-	if(i == 0){
-		$(bilder[i]).removeClass("inaktivBild").addClass("aktivBild");		
-		i++;
-	}else if(i > bilder.length){
-		i = 0;
-	}else
-	$(bilder[i - 1]).removeClass("aktivBild").addClass("inaktivBild");
-	$(bilder[i]).removeClass("inaktivBild").addClass("aktivBild");	
+
+
+if(i == 5){
+	console.log("test");
+}
+
+	else if(i == undefined){
+		i = 5;
+	}
+	console.log("tab index: " + indexOf(this));
+	// if(i == 0){
+	// 	$(bilder[i]).removeClass("inaktivBild").addClass("aktivBild");
+	// 	i++;
+	// }else if(i > bilder.length){
+	// 	i = 0;
+	// }else
+	// {
+	// 	$(bilder[i - 1]).removeClass("aktivBild").addClass("inaktivBild");
+	// 	$(bilder[i]).removeClass("inaktivBild").addClass("aktivBild");
+	// }
+	console.log(i);
+
 }
 
 
@@ -77,13 +93,8 @@ function toppHeight(){
 
 
 function expandera() {
-	$("nav").toggleClass("stangd", 1000);	
+	$("nav").toggleClass("stangd", 1000);
 }
 
 
 document.addEventListener("scroll", scroll);
-
-
-
-
-

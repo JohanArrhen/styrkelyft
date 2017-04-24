@@ -19,6 +19,9 @@ Meny: Tempus Sans ITC (Neucha från google fonts)
     font-style: normal;
 
 }
+img{
+  display:block;
+}
 
 html{
   font-size: 62.5%;
@@ -106,7 +109,7 @@ nav {
 	list-style-type: none;
 	width: 350px;
 
-  	width: 35rem;
+  width: 35rem;
 	/*parent till li*/
 	display: flex;
   justify-content: space-around;
@@ -144,53 +147,40 @@ article{
 }
 
 p {
-  font-size: 2rem;	
+  font-size: 2rem;
 
 }
 #bildspel{
-  /*width: 75%;*/
-	
-  width: 800px;
-  
- 
 
-<<<<<<< HEAD
+
+  box-sizing: border-box;
+  border: 0.4rem solid #000;
+  margin: auto;
+  margin-top: 3%;
+  max-width: 766px;
   width: 100%;
 
-  border: 10px solid #000;
-  margin-top: 700px;
-  box-sizing: border-box;
-  margin:auto;
-  max-width: 900px;
-=======
-  border: 1px solid #000;
-  box-sizing: border-box;
-  margin:auto;
-  margin-top: 20px;
->>>>>>> 80d2579a69f963104e1f9e6c2d00de40cbbda695
+
 }
+
 
 .inaktivBild{
-	width: 0%;	
+	width: 0%;
 }
 .aktivBild{
-	width: 100%;
-}
 
-
-
-
-@media screen and (max-width: 800px) {/*Surfplatta*/
-#bildspel{
-  
   width: 100%;
-  
-	
 
 }
-@media screen and (max-width: 480px) { /*Mobil*/
+#undertext{
+  height: 60px;
+  height: 6rem;
+  max-width: 766px;
+  background-color: red;
 
+}
 
+@media screen and (max-width: 800px){
   html{
   font-size: 40%;
   }
@@ -217,15 +207,15 @@ p {
     /*height: 0rem;
     width: 0;
     padding: 0;*/
-	  display: none;
+    display: none;
   }
   #huvudrubrik{
 
   }
   #menyknapp{
     height: 4rem;
-	  width: 4rem;
-    margin-right: 50px;
+    width: 4rem;
+    margin-right: 0;
 
 
 
@@ -244,7 +234,7 @@ p {
 
   .stangd{
     height: 0;
-	  display: none;
+    display: none;
     overflow: hidden;
   }
 
@@ -255,7 +245,7 @@ p {
     box-sizing: border-box;
 
     /*border-bottom: 2px solid red;*/
-	  border-bottom: 0.4rem solid red;
+    border-bottom: 0.4rem solid red;
 
     background-color: white;
     margin: 0;
@@ -266,7 +256,7 @@ p {
 
     /*font-size: 22px;*/
     font-size: 2.2rem;
-  	color: black;
+    color: black;
     text-decoration: none;
 
     /*font-size: 30px;*/
@@ -274,7 +264,7 @@ p {
   }
 
   nav:last-child {
-	border-bottom: 0.2rem solid red;
+  border-bottom: 0.2rem solid red;
   }
 
   p{
@@ -286,4 +276,13 @@ p {
   }
 
 
+  }
+
+}
+
+@media screen and (max-width: 766px) {/*Surfplatta, bildspel*/
+#bildspel{
+
+  border-right: 0;
+  border-left: 0;
 }
