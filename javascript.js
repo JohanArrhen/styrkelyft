@@ -1,14 +1,16 @@
 // JavaScript Document
 var storRubrik = true;
+var bildnummer;
+
 window.onload = function() {
 
 	$("#menyknapp").on("click", expandera);
 
 
 
+	var bilder =  $(".bildspel");
 
-	var bilder;
-	bilder =  $(".bildspel");
+	
 
 
 
@@ -16,7 +18,7 @@ window.onload = function() {
 	console.log(bilder);
 	//bildbyte
 
-	$(bilder).on("click", bildByte);
+	$(bilder).on("click", bildBytePlus);
 
 
 
@@ -41,31 +43,61 @@ window.onload = function() {
 };
 
 
-var i;
-function bildByte(){
-
-
-if(i == 5){
-	console.log("test");
+function bildBytePlus(){
+		var bilder =  $(".bildspel");
+		if(bildnummer == undefined){
+			bildnummer = 0;	
+		}
+		
+		bildnummer++;
+	
+		if(bildnummer > bilder.length - 1){
+			$(bilder[bilder.length - 1]).removeClass("aktivBild").addClass("inaktivBild");
+	 		$(bilder[0]).removeClass("inaktivBild").addClass("aktivBild");	
+			bildnummer = 0;
+		}else {
+			$(bilder[bildnummer - 1]).removeClass("aktivBild").addClass("inaktivBild");
+	 		$(bilder[bildnummer]).removeClass("inaktivBild").addClass("aktivBild");
+		}
+		$("#bildNamn").html(bilder[bildnummer].alt);
+	
+}
+function bildByteMinus(){
+		var bilder =  $(".bildspel");
+		if(bildnummer == undefined){
+			bildnummer = 0;	
+		}
+		
+		bildnummer--;
+	
+		if(bildnummer < 0){
+			$(bilder[0]).removeClass("aktivBild").addClass("inaktivBild");
+	 		$(bilder[bilder.length - 1]).removeClass("inaktivBild").addClass("aktivBild");	
+			bildnummer = bilder.length - 1;
+		}
+		
+		else {
+			$(bilder[bildnummer + 1]).removeClass("aktivBild").addClass("inaktivBild");
+	 		$(bilder[bildnummer]).removeClass("inaktivBild").addClass("aktivBild");
+		}
+		$("#bildNamn").html(bilder[bildnummer].alt);
 }
 
-	else if(i == undefined){
-		i = 5;
-	}
-	console.log("tab index: " + indexOf(this));
-	// if(i == 0){
-	// 	$(bilder[i]).removeClass("inaktivBild").addClass("aktivBild");
-	// 	i++;
-	// }else if(i > bilder.length){
-	// 	i = 0;
-	// }else
-	// {
-	// 	$(bilder[i - 1]).removeClass("aktivBild").addClass("inaktivBild");
-	// 	$(bilder[i]).removeClass("inaktivBild").addClass("aktivBild");
-	// }
-	console.log(i);
 
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 function scroll(){

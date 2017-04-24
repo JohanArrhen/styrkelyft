@@ -176,8 +176,13 @@ p {
   height: 60px;
   height: 6rem;
   max-width: 766px;
-  background-color: red;
-
+  background-color: darkgrey;
+  
+  display: flex;
+}
+#bildNamn{
+	font-size: 4rem;
+	padding-left: 1rem;
 }
 
 @media screen and (max-width: 800px){
