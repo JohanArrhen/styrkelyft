@@ -18,13 +18,14 @@ window.onload = function() {
 	console.log(bilder);
 	//bildbyte
 
-	$(bilder).on("click", bildBytePlus);
+	//$(bilder).on("click", bildBytePlus);
 
 
+	$("#pilboxHoger").on("click", bildBytePlus)
+	$("#pilboxVanster").on("click", bildByteMinus)
+	
 
-
-
-
+	$("#pilboxHoger").on("click", test)
 
 
 
@@ -41,7 +42,10 @@ window.onload = function() {
 
 
 };
-
+function test() {
+	
+	console.log("vänsterpil");	
+}
 
 function bildBytePlus(){
 		var bilder =  $(".bildspel");
@@ -60,7 +64,7 @@ function bildBytePlus(){
 	 		$(bilder[bildnummer]).removeClass("inaktivBild").addClass("aktivBild");
 		}
 		$("#bildNamn").html(bilder[bildnummer].alt);
-	
+		console.log(bildnummer);
 }
 function bildByteMinus(){
 		var bilder =  $(".bildspel");
@@ -81,6 +85,7 @@ function bildByteMinus(){
 	 		$(bilder[bildnummer]).removeClass("inaktivBild").addClass("aktivBild");
 		}
 		$("#bildNamn").html(bilder[bildnummer].alt);
+		console.log(bildnummer);
 }
 
 

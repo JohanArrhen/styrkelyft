@@ -112,7 +112,7 @@ nav {
   width: 35rem;
 	/*parent till li*/
 	display: flex;
-  justify-content: space-around;
+  	justify-content: space-around;
  	align-items: flex-end; /*lägger menyn längst ner*/
 
 
@@ -179,10 +179,48 @@ p {
   background-color: darkgrey;
   
   display: flex;
+  justify-content: space-between;
 }
 #bildNamn{
 	font-size: 4rem;
 	padding-left: 1rem;
+}
+#pilbox{
+	height: 60px;
+	width: 60px;
+	display: flex;
+	padding-right: 10px;
+	
+}
+#pilboxHoger{
+	height: 60px;
+	width: 30px;
+	
+	
+	
+}
+#pilboxVanster{
+	height: 60px;
+	width: 30px;
+	
+	/*overflow: hidden;*/
+		
+}
+#pilhoger{
+	height: 100%;
+	width: 200%;	
+	
+	position: relative;
+	right: 30px;
+	cursor: pointer;
+}
+#pilvanster{
+	height: 100%;
+	width: 200%;	
+	cursor: pointer;
+	position: relative;
+	
+	
 }
 
 @media screen and (max-width: 800px){
