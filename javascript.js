@@ -3,9 +3,9 @@ var storRubrik = true;
 var bildnummer;
 
 window.onload = function() {
-
+	minimize();
 	$("#menyknapp").on("click", expandera);
-
+	$("article").on("click", minimize);
 
 
 	var bilder =  $(".bildspel");
@@ -103,7 +103,9 @@ function toppHeight(){
 
 function expandera() {
 	$("nav").toggleClass("stangd", 1000);
-}
-
+};
+function minimize() {
+	$("nav").addClass("stangd");
+};
 
 document.addEventListener("scroll", scroll);

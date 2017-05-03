@@ -42,7 +42,7 @@ html{
 #topp {
   height: 60px;
   height: 6rem;
-
+	padding-top: 2rem;
 
   width: 100%;
   border-bottom: 3px solid red;
@@ -140,16 +140,13 @@ nav {
 article{
 	width: 100%;
 	height: 100%;
- 	/*padding-top: 50px;
-  padding-top: 5rem;*/
+ 	/*padding-top: 50px;*/
+  	padding-top: 7rem;
  	box-sizing:border-box;
 
 }
 
-p {
-  font-size: 2rem;
 
-}
 
 
 
@@ -161,8 +158,8 @@ p {
   border: 0.4rem solid #000;
   border-radius: 0.4rem;
   margin: auto;
-  margin-top: 5rem;
-  max-width: 766px;
+  /*margin-top: 10rem;
+*/  max-width: 766px;
   width: 100%;
 }
 
@@ -198,8 +195,8 @@ p {
   width: 7em;
 	display: flex;
 	margin-right: 10px;
-  display: flex;
-  justify-content: space-between;
+ 	 display: flex;
+ justify-content: space-between;
   align-items: center;
 
 
@@ -215,6 +212,25 @@ p {
 
 
 
+/*** Regler ***/
+h2{
+	
+	font-size: 5rem;	
+}
+p {
+  font-size: 3rem;
+
+}
+#regler{
+	
+	padding: 7rem 5rem 0 5rem;
+	
+}
+#regler img{
+	max-width: 100%;
+	width: auto;
+		
+}
 
 
 
@@ -224,22 +240,7 @@ p {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-@media screen and (max-width: 800px){
+@media screen and (max-width: 810px){
   html{
   font-size: 40%;
   }
@@ -249,18 +250,21 @@ p {
     border-bottom: none;
     padding-top: 2px;
     box-sizing: border-box;
+	
   }
 
 
   header{
-
     width: 100%;
     padding: 3px;
-
-
     border-bottom: 0.6rem solid red;
-
-    justify-content: space-between;
+    
+	
+	
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	
   }
   #bankpressSvartvit{
     /*height: 0rem;
@@ -326,10 +330,6 @@ p {
   border-bottom: 0.2rem solid red;
   }
 
-  p{
-    font-size: 30px;
-  }
-
   #bildspel{
 
   }
@@ -362,7 +362,7 @@ p {
 }
 
 
-
+/*
 @media screen and (max-height: 400px){
   #topp{
     position: relative;
@@ -384,3 +384,4 @@ p {
     height: 100%;
   }
 }
+*/
