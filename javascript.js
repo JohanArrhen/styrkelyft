@@ -10,22 +10,8 @@ window.onload = function() {
 
 	var bilder =  $(".bildspel");
 
-	
-
-
-
-
-	console.log(bilder);
-	//bildbyte
-
-	//$(bilder).on("click", bildBytePlus);
-
-
-	$("#pilboxHoger").on("click", bildBytePlus)
-	$("#pilboxVanster").on("click", bildByteMinus)
-	
-
-	$("#pilboxHoger").on("click", test)
+	$("#hoger").on("click", bildBytePlus);
+	$("#vanster").on("click", bildByteMinus);
 
 
 
@@ -42,22 +28,19 @@ window.onload = function() {
 
 
 };
-function test() {
-	
-	console.log("vänsterpil");	
-}
+
 
 function bildBytePlus(){
 		var bilder =  $(".bildspel");
 		if(bildnummer == undefined){
-			bildnummer = 0;	
+			bildnummer = 0;
 		}
-		
+
 		bildnummer++;
-	
+
 		if(bildnummer > bilder.length - 1){
 			$(bilder[bilder.length - 1]).removeClass("aktivBild").addClass("inaktivBild");
-	 		$(bilder[0]).removeClass("inaktivBild").addClass("aktivBild");	
+	 		$(bilder[0]).removeClass("inaktivBild").addClass("aktivBild");
 			bildnummer = 0;
 		}else {
 			$(bilder[bildnummer - 1]).removeClass("aktivBild").addClass("inaktivBild");
@@ -69,17 +52,17 @@ function bildBytePlus(){
 function bildByteMinus(){
 		var bilder =  $(".bildspel");
 		if(bildnummer == undefined){
-			bildnummer = 0;	
+			bildnummer = 0;
 		}
-		
+
 		bildnummer--;
-	
+
 		if(bildnummer < 0){
 			$(bilder[0]).removeClass("aktivBild").addClass("inaktivBild");
-	 		$(bilder[bilder.length - 1]).removeClass("inaktivBild").addClass("aktivBild");	
+	 		$(bilder[bilder.length - 1]).removeClass("inaktivBild").addClass("aktivBild");
 			bildnummer = bilder.length - 1;
 		}
-		
+
 		else {
 			$(bilder[bildnummer + 1]).removeClass("aktivBild").addClass("inaktivBild");
 	 		$(bilder[bildnummer]).removeClass("inaktivBild").addClass("aktivBild");
@@ -87,17 +70,6 @@ function bildByteMinus(){
 		$("#bildNamn").html(bilder[bildnummer].alt);
 		console.log(bildnummer);
 }
-
-
-
-
-
-
-
-
-
-
-
 
 
 

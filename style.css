@@ -140,8 +140,8 @@ nav {
 article{
 	width: 100%;
 	height: 100%;
- 	padding-top: 50px;
-  	padding-top: 5rem;
+ 	/*padding-top: 50px;
+  padding-top: 5rem;*/
  	box-sizing:border-box;
 
 }
@@ -150,78 +150,94 @@ p {
   font-size: 2rem;
 
 }
+
+
+
+
+/****  Bildspel ****/
+
 #bildspel{
-
-
   box-sizing: border-box;
   border: 0.4rem solid #000;
+  border-radius: 0.4rem;
   margin: auto;
-  margin-top: 3%;
+  margin-top: 5rem;
   max-width: 766px;
   width: 100%;
-
-
 }
-
 
 .inaktivBild{
 	width: 0%;
 }
+
 .aktivBild{
-
   width: 100%;
-
 }
+
 #undertext{
   height: 60px;
   height: 6rem;
   max-width: 766px;
-  background-color: darkgrey;
-  
+  background-color: rgb(90, 90, 90);
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
+
 #bildNamn{
 	font-size: 4rem;
 	padding-left: 1rem;
+  color: white;
+
 }
+
 #pilbox{
 	height: 60px;
 	width: 60px;
+  height: 6rem;
+  width: 7em;
 	display: flex;
-	padding-right: 10px;
-	
+	margin-right: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+
 }
-#pilboxHoger{
-	height: 60px;
-	width: 30px;
-	
-	
-	
-}
-#pilboxVanster{
-	height: 60px;
-	width: 30px;
-	
-	/*overflow: hidden;*/
-		
-}
-#pilhoger{
-	height: 100%;
-	width: 200%;	
-	
+
+.pil{
+
+	height: 50%;
 	position: relative;
-	right: 30px;
 	cursor: pointer;
+
 }
-#pilvanster{
-	height: 100%;
-	width: 200%;	
-	cursor: pointer;
-	position: relative;
-	
-	
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 @media screen and (max-width: 800px){
   html{
@@ -315,17 +331,56 @@ p {
   }
 
   #bildspel{
-    width:
+
   }
 
 
-  }
+
 
 }
 
 @media screen and (max-width: 766px) {/*Surfplatta, bildspel*/
-#bildspel{
 
-  border-right: 0;
-  border-left: 0;
+  #bildspel{
+
+    border-right: 0;
+    border-left: 0;
+  }
+}
+
+@media screen and (max-width: 400px){
+  html{
+    font-size: 30%;
+
+  }
+}
+@media screen and (max-width: 270px){
+  html{
+    font-size: 20%;
+
+  }
+}
+
+
+
+@media screen and (max-height: 400px){
+  #topp{
+    position: relative;
+
+
+  }
+  article{
+    padding-top: 0;
+    margin-top: 0;
+
+  }
+  #bildspel{
+    width: auto;
+    height: 50%;
+    margin-top: 0;
+    padding-top: 0;
+  }
+  img{
+    height: 100%;
+  }
 }
