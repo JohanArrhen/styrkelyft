@@ -215,27 +215,31 @@ article{
 
 
 /*** Regler ***/
+
 .reglerbox{
   width: 100%;
-  height: 50%; /*auto för att expandera*/
-
+  height: 30rem; /*auto för att expandera*/
+	height: auto;
   border: 0.5rem solid red;
   border-radius: 0.5rem;
   box-sizing: border-box;
   overflow: hidden;
   margin-bottom: 3rem;
+  
+  float: left;
 
 }
 .platsForRubrikOchBild{
-  height: 100%;
-
-
+  height: 30rem;
+	
+	
   float: left;
 
 
 }
 .platsForRubrikOchBild img{
-  height: 80%;
+  height: 70%;
+  padding: 0 2rem 0 2rem;
 }
 
 .reglerbox h2{
@@ -251,6 +255,22 @@ article{
   padding: 3rem;
 
 
+}
+.uppNerPilar{
+	height: 4rem;
+	width: 4rem;
+	background-color:red;
+	
+	
+
+}
+.uppNerPilar img{
+	
+	height: 100%;
+	width: 300%;
+
+	
+		
 }
 #regler{
 
