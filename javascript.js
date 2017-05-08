@@ -1,30 +1,20 @@
 // JavaScript Document
 var storRubrik = true;
 var bildnummer;
+var foregaendeScrollPosition;
+var nuvarandeScrollPosition,
+		nedatscroll;
 
 window.onload = function() {
-	minimize();
-	$("#menyknapp").on("click", expandera);
-	$("article").on("click", minimize);
+	minimeraMeny();
+	$("#menyknapp").on("click", expanderaMeny);
+	$("article").on("click", minimeraMeny);
 
 
 	var bilder =  $(".bildspel");
 
 	$("#hoger").on("click", bildBytePlus);
 	$("#vanster").on("click", bildByteMinus);
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 };
@@ -46,7 +36,9 @@ function bildBytePlus(){
 			$(bilder[bildnummer - 1]).removeClass("aktivBild").addClass("inaktivBild");
 	 		$(bilder[bildnummer]).removeClass("inaktivBild").addClass("aktivBild");
 		}
-		$("#bildNamn").html(bilder[bildnummer].alt);
+
+		var lyftarnamn = bilder[bildnummer].alt.replace(/bild på/i, "");
+		$("#bildNamn").html(lyftarnamn);
 		console.log(bildnummer);
 }
 function bildByteMinus(){
@@ -72,40 +64,129 @@ function bildByteMinus(){
 }
 
 
-
-
-
-
-
 function scroll(){
   var scrollPosition = $(window).scrollTop(); //hur långt det är scrollat i webbläsaren
   var width = $(window).width();
+	anpassaHeader();
 
-  if(width >= 800){
-    toppHeight();
-  }
+}
+function anpassaHeader(){
 
-function toppHeight(){
-  if(scrollPosition > 200 && storRubrik == true){ //scrollat mer än 200px men rubriken är stor
-    $("#huvudrubrik").animate({"font-size": "3rem"}, 100);
+	//console.log("ären ner eller? " + nedatscroll);
+
+		if(storRubrik == true && nedatscroll == true && $(window).scrollTop() > 200){
+			if($(window).width() > 800){
+				andraHeaderhojd();
+			}else{
+				taBortHeader();
+			}
+
+		}else if(storRubrik == false && nedatscroll == false && $(window).scrollTop() > 200){
+			if($(window).width() > 800){
+				andraHeaderhojd();
+			}else{
+				taBortHeader();
+			}
+		}
+
+}
+function andraHeaderhojd() {
+	if(storRubrik == true){
+		$("#huvudrubrik").animate({"font-size": "3rem"}, 100);
     $("#topp").animate({"height": "3rem"}, 100);
     storRubrik = false;
-  }
-  if(scrollPosition < 200 && storRubrik != true){ //scrollat mindre än 200px men rubriken är inte stor
-
-			$("#huvudrubrik").animate({"font-size": "6rem"}, 100);
-			$("#topp").animate({"height": "6rem"}, 100);
-			storRubrik = true;
-  		}
+	}else{
+		$("#huvudrubrik").animate({"font-size": "6rem"}, 100);
+		$("#topp").animate({"height": "6rem"}, 100);
+		storRubrik = true;
 	}
+
+}
+function taBortHeader() {
+
+	if(storRubrik == true){
+			$("#topp").animate({"top": "-10rem"}, 500);
+			storRubrik = false;
+		}else{
+			$("#topp").animate({"top": "0"}, 500);
+			storRubrik = true;
+		}
+
 }
 
 
-function expandera() {
+// function toppHeight(){
+//   if(scrollPosition > 200 && storRubrik == true){ //scrollat mer än 200px men rubriken är stor
+//     $("#huvudrubrik").animate({"font-size": "3rem"}, 100);
+//     $("#topp").animate({"height": "3rem"}, 100);
+//     storRubrik = false;
+//   }
+//   if(scrollPosition < 200 && storRubrik != true){ //scrollat mindre än 200px men rubriken är inte stor
+//
+// 			$("#huvudrubrik").animate({"font-size": "6rem"}, 100);
+// 			$("#topp").animate({"height": "6rem"}, 100);
+// 			storRubrik = true;
+//   		}
+// 	}
+// }
+
+
+function expanderaMeny() {
 	$("nav").toggleClass("stangd", 1000);
 };
-function minimize() {
+function minimeraMeny() {
 	$("nav").addClass("stangd");
 };
 
+
+
+
+function scrollarNer() {
+
+	if(foregaendeScrollPosition == undefined || nuvarandeScrollPosition == undefined){
+		foregaendeScrollPosition = $(window).scrollTop();
+		nuvarandeScrollPosition = $(window).scrollTop();
+	}
+
+	nuvarandeScrollPosition = $(window).scrollTop();
+
+
+
+		// console.log("nuvarandeScrollPosition: " + nuvarandeScrollPosition);
+		// console.log("foregaendeScrollPosition: " + foregaendeScrollPosition);
+
+
+	if(nuvarandeScrollPosition > foregaendeScrollPosition){
+		//console.log("nedåtscroll");
+		nedatscroll = true;
+	}else if(nuvarandeScrollPosition < foregaendeScrollPosition){
+		//console.log("uppåtscroll");
+		nedatscroll = false;
+	}
+	foregaendeScrollPosition = nuvarandeScrollPosition;
+
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 document.addEventListener("scroll", scroll);
+document.addEventListener("scroll", scrollarNer);

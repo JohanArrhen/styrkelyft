@@ -42,7 +42,7 @@ html{
 #topp {
   height: 60px;
   height: 6rem;
-	padding-top: 2rem;
+
 
   width: 100%;
   border-bottom: 3px solid red;
@@ -55,6 +55,7 @@ html{
   background-color: white;
 
 }
+
 
 /**    Rubrik     **/
 header {
@@ -84,11 +85,13 @@ header {
 	color: red;
   line-height: 75%;
 }
+
 #menyknapp{
   height: 0;
   width: 0;
 
 }
+
 
 
 /**    Meny:   **/
@@ -141,11 +144,10 @@ article{
 	width: 100%;
 	height: 100%;
  	/*padding-top: 50px;*/
-  	padding-top: 7rem;
+  padding-top: 7rem;
  	box-sizing:border-box;
 
 }
-
 
 
 
@@ -213,23 +215,47 @@ article{
 
 
 /*** Regler ***/
-h2{
-	
-	font-size: 5rem;	
+.reglerbox{
+  width: 100%;
+  height: 50%; /*auto för att expandera*/
+
+  border: 0.5rem solid red;
+  border-radius: 0.5rem;
+  box-sizing: border-box;
+  overflow: hidden;
+  margin-bottom: 3rem;
+
 }
-p {
+.platsForRubrikOchBild{
+  height: 100%;
+
+
+  float: left;
+
+
+}
+.platsForRubrikOchBild img{
+  height: 80%;
+}
+
+.reglerbox h2{
+  height: 20%;
+  display: block;
   font-size: 3rem;
+
+  text-align: center;
+
+}
+.reglerbox p {
+  font-size: 3rem;
+  padding: 3rem;
+
 
 }
 #regler{
-	
-	padding: 7rem 5rem 0 5rem;
-	
-}
-#regler img{
-	max-width: 100%;
-	width: auto;
-		
+
+	padding: 10rem 5rem 0 5rem;
+
 }
 
 
@@ -248,23 +274,23 @@ p {
   #topp{
     height: auto;
     border-bottom: none;
-    padding-top: 2px;
+    padding-top: 1.7rem;
     box-sizing: border-box;
-	
+
   }
 
 
   header{
     width: 100%;
-    padding: 3px;
+    padding: 0.3rem;
     border-bottom: 0.6rem solid red;
-    
-	
-	
+
+
+
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	
+
   }
   #bankpressSvartvit{
     /*height: 0rem;
@@ -352,6 +378,9 @@ p {
   html{
     font-size: 30%;
 
+  }
+  #menyknapp{
+    margin-right: 5rem;
   }
 }
 @media screen and (max-width: 270px){
