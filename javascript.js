@@ -11,9 +11,9 @@ window.onload = function() {
 	$("article").on("click", minimeraMeny);
 	$(".pil").on("click", expanderaMinimeraRegelbox);
 	$(".reglerText").on("click", expanderaRegelbox);
-	$(".fade").on("click", expanderaRegelbox);
+	$(".fadebox").on("click", expanderaRegelbox);
 
-	$(".fade").hover(minskaOpacitet, okaOpacitet);
+	$(".fadebox").hover(minskaOpacitet, okaOpacitet);
 
 	var bilder =  $(".bildspel");
 
@@ -177,7 +177,7 @@ function scrollarNer() {
 function expanderaMinimeraRegelbox() {
 
 	var reglerboxMinusPilar = $(this).parent().parent().children()[0];
-	var fade = $(this).prev();
+	var fade = $($(this).prev()).children()[0];
 	//.css("height", "auto");
 	//reglerboxMinusPilar.animate({"height": "auto"}, 500);
 	var uppNerPilar = this;
@@ -201,13 +201,13 @@ function expanderaMinimeraRegelbox() {
 function expanderaRegelbox(){
 
 	if(this.alt == "mer text finns"){
-		var fade = this;
+		var fade = this.children()[0];
 		var reglerboxMinusPilar = $($(this).parent()[0]).prev();
 		var uppNerPilar = $($(reglerboxMinusPilar).siblings()[0]).children()[1];
 
 	}else{
 		var	reglerboxMinusPilar = $(this).parent();
-		var fade = $($(reglerboxMinusPilar).siblings()[0]).children()[0];
+		var fade = $($($(reglerboxMinusPilar).siblings()[0]).children()[0]).children()[0];
 		var uppNerPilar = $($(reglerboxMinusPilar).siblings()[0]).children()[1];
 	}
 
@@ -230,10 +230,12 @@ function expanderaRegelbox(){
 // }
 
 function minskaOpacitet(){
-	$(this).animate({"height": "2rem"}, 200);
+	var fade = $(this).children()[0];
+	$(fade).animate({"height": "2rem"}, 200);
 }
 function okaOpacitet(){
-	$(this).animate({"height": "5rem"}, 200);
+	var fade = $(this).children()[0];
+	$(fade).animate({"height": "5rem"}, 200);
 }
 
 

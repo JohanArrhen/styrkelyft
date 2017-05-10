@@ -280,15 +280,21 @@ article{
   align-items: flex-end;
 
 }
-.fade{
-  width: 97%;
+.fadebox{
+	width: 97%;
   height: 5rem;
-
   position: relative;
-
   z-index: 1;
-
-  float: left;
+  float: left;	
+  display: flex;
+  align-items: flex-end;
+  
+}
+.fade{
+	width: 100%;
+	height: 5rem;
+  
+  
 }
 
 .pil{
