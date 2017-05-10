@@ -186,14 +186,24 @@ function expanderaMinimeraRegelbox() {
 
 
 	if($(fade).css("opacity") != 0){
-		$(reglerboxMinusPilar).animate({"max-height": "4000px"}, 300);
+		$(reglerboxMinusPilar).animate({"max-height": "40000px"}, 300, function(){
+				var height = $(reglerboxMinusPilar).css("height");
+				console.log(height);
+				console.log($(reglerboxMinusPilar).css("max-height"));
+				$(reglerboxMinusPilar).css("max-height") = "50px";
+			});
 		$(fade).animate({"opacity": "0"}, 0);
 		this.src = "bilder/PilUpp.png";
+		
+		
 	}else{
-		$(reglerboxMinusPilar).animate({"max-height": "30rem"}, {duration: 300, queue: false});
-
-		$(fade).animate({"opacity": "100"}, {duration: 0, queue: false})
-		uppNerPilar.src = "bilder/PilNer.png";
+		$(reglerboxMinusPilar).animate({"max-height": "30rem"}, 300, function(){
+				$(fade).animate({"opacity": "100"}, 300)
+				uppNerPilar.src = "bilder/PilNer.png";
+				console.log("klart");
+			});
+		
+		
 
 	}
 };
