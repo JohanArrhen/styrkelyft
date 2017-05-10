@@ -9,7 +9,11 @@ window.onload = function() {
 	minimeraMeny();
 	$("#menyknapp").on("click", expanderaMeny);
 	$("article").on("click", minimeraMeny);
+	$(".pil").on("click", expanderaMinimeraRegelbox);
+	$(".reglerText").on("click", expanderaRegelbox);
+	$(".fade").on("click", expanderaRegelbox);
 
+	$(".fade").hover(minskaOpacitet, okaOpacitet);
 
 	var bilder =  $(".bildspel");
 
@@ -39,7 +43,7 @@ function bildBytePlus(){
 
 		var lyftarnamn = bilder[bildnummer].alt.replace(/bild på/i, "");
 		$("#bildNamn").html(lyftarnamn);
-		console.log(bildnummer);
+		
 }
 function bildByteMinus(){
 		var bilder =  $(".bildspel");
@@ -59,8 +63,9 @@ function bildByteMinus(){
 			$(bilder[bildnummer + 1]).removeClass("aktivBild").addClass("inaktivBild");
 	 		$(bilder[bildnummer]).removeClass("inaktivBild").addClass("aktivBild");
 		}
-		$("#bildNamn").html(bilder[bildnummer].alt);
-		console.log(bildnummer);
+		var lyftarnamn = bilder[bildnummer].alt.replace(/bild på/i, "");
+		$("#bildNamn").html(lyftarnamn);
+
 }
 
 
@@ -169,10 +174,67 @@ function scrollarNer() {
 
 
 
-funktion expanderaRegelbox() {
-		
+function expanderaMinimeraRegelbox() {
+
+	var reglerboxMinusPilar = $(this).parent().parent().children()[0];
+	var fade = $(this).prev();
+	//.css("height", "auto");
+	//reglerboxMinusPilar.animate({"height": "auto"}, 500);
+	var uppNerPilar = this;
+
+
+
+
+	if($(fade).css("opacity") != 0){
+		$(reglerboxMinusPilar).animate({"max-height": "4000px"}, 300);
+		$(fade).animate({"opacity": "0"}, 0);
+		this.src = "bilder/PilUpp.png";
+	}else{
+		$(reglerboxMinusPilar).animate({"max-height": "30rem"}, {duration: 300, queue: false});
+
+		$(fade).animate({"opacity": "100"}, {duration: 0, queue: false})
+		uppNerPilar.src = "bilder/PilNer.png";
+
+	}
+};
+
+function expanderaRegelbox(){
+
+	if(this.alt == "mer text finns"){
+		var fade = this;
+		var reglerboxMinusPilar = $($(this).parent()[0]).prev();
+		var uppNerPilar = $($(reglerboxMinusPilar).siblings()[0]).children()[1];
+
+	}else{
+		var	reglerboxMinusPilar = $(this).parent();
+		var fade = $($(reglerboxMinusPilar).siblings()[0]).children()[0];
+		var uppNerPilar = $($(reglerboxMinusPilar).siblings()[0]).children()[1];
+	}
+
+		$(reglerboxMinusPilar).animate({"max-height": "4000px"}, 300);
+		$(fade).animate({"opacity": "0"}, 0);
+		uppNerPilar.src = "bilder/PilUpp.png";
+
 }
 
+
+
+// if(reglerboxMinusPilar.css("height") == "auto"){
+// 	this.src = "bilder/PilUpp.png";
+// 	console.log("lång jävel");
+//
+// }else{
+// 	this.src = "bilder/PilNer.png";
+// 	down = true;
+//
+// }
+
+function minskaOpacitet(){
+	$(this).animate({"height": "2rem"}, 200);
+}
+function okaOpacitet(){
+	$(this).animate({"height": "5rem"}, 200);
+}
 
 
 
