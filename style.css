@@ -58,7 +58,7 @@ html{
 
 
 /**    Rubrik     **/
-header {
+#header {
   height:100%;
   flex-grow: 1,5;
   min-width: 400px;
@@ -87,6 +87,7 @@ header {
 }
 
 #menyknapp{
+
   height: 0;
   width: 0;
 
@@ -265,9 +266,10 @@ article{
 }
 
 .pil:hover{
-  width: 3.1%;
-  right: 0.1%;
+  width: 2.9%;
+  /*right: 0.1%;*/
 }
+
 .uppNerPilar{
 
 	height: 4rem;
@@ -275,6 +277,7 @@ article{
   position: relative;
   top: -4.5rem;
   left: 0.5rem;
+
 
   display: flex;
   align-items: flex-end;
@@ -285,20 +288,21 @@ article{
   height: 5rem;
   position: relative;
   z-index: 1;
-  float: left;	
+  float: left;
   display: flex;
   align-items: flex-end;
-  
+
 }
 .fade{
 	width: 100%;
 	height: 5rem;
-  
-  
+
+
 }
 
 .pil{
   width: 3%;
+
   /*height: 4rem;*/
   height: auto;
   padding-bottom: 0.2rem;
@@ -314,8 +318,20 @@ article{
 	padding: 10rem 5rem 0 5rem;
 
 }
+#regler a{
+  font-family: 'Neucha', cursive;
+  font-size: 3rem;
+  color: black;
+  text-decoration: none;
+}
 
+#regler a:hover, #regler a:active{
 
+  text-decoration: underline;
+}
+#regler a:active{
+  color: red;
+}
 
 
 
@@ -327,42 +343,49 @@ article{
   html{
   font-size: 40%;
   }
+  #bankpressSvartvit{
+    display: none;
+
+  }
 
   #topp{
     height: auto;
     border-bottom: none;
     padding-top: 1.7rem;
     box-sizing: border-box;
+    width: 100%;
+    border: 1px solid orange;
 
   }
 
 
-  header{
+  #header{
+    box-sizing: border-box;
     width: 100%;
     padding: 0.3rem;
     border-bottom: 0.6rem solid red;
 
 
 
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
+
+  	display: flex;
+    justify-content: space-between;
+  	align-items: center;
+
+
 
   }
-  #bankpressSvartvit{
-    /*height: 0rem;
-    width: 0;
-    padding: 0;*/
-    display: none;
-  }
+
   #huvudrubrik{
+      padding: 0;
+      margin: 0;
 
   }
   #menyknapp{
+
     height: 4rem;
     width: 4rem;
     margin-right: 0;
-
 
 
 
@@ -413,9 +436,6 @@ article{
   border-bottom: 0.2rem solid red;
   }
 
-  #bildspel{
-
-  }
 
 
 
@@ -436,15 +456,20 @@ article{
     font-size: 30%;
 
   }
-  #menyknapp{
+  /*#menyknapp{
     margin-right: 5rem;
-  }
+  }*/
 }
-@media screen and (max-width: 270px){
+@media screen and (max-width: 350px){
   html{
     font-size: 20%;
 
+
   }
+  #menyknapp{
+    padding-right: 4.5rem;
+  }
+
 }
 
 
