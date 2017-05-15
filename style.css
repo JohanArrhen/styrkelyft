@@ -52,6 +52,7 @@ html{
   align-items: flex-end; /*sätter nav i botten av #topp */
   /*overflow: hidden;*/
   position: fixed;
+  z-index: 1;
   background-color: white;
 
 }
