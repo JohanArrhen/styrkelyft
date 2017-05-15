@@ -86,22 +86,23 @@ function scroll(){
 function anpassaHeader(){
 
 	//console.log("ären ner eller? " + nedatscroll);
+	if($(document).height() - $(window).height() > 200){ //hindrar menyn från att gå upp och ner när det är scroll upp på överta 200px
 
-		if(storRubrik == true && nedatscroll == true && $(window).scrollTop() > 200){
-			if($(window).width() > 800){
-				andraHeaderhojd();
-			}else{
-				taBortHeader();
+				if(storRubrik == true && nedatscroll == true && $(window).scrollTop() > 200 && $(window).scrollTop() < $(window).height() - 5){
+					if($(window).width() > 800){
+						andraHeaderhojd();
+				}else{
+					taBortHeader();
+				}
+
+			}else if(storRubrik == false && nedatscroll == false && $(window).scrollTop() > 200 && $(window).scrollTop() < $(window).height() - 5){
+				if($(window).width() > 800){
+					andraHeaderhojd();
+				}else{
+					taBortHeader();
+				}
 			}
-
-		}else if(storRubrik == false && nedatscroll == false && $(window).scrollTop() > 200){
-			if($(window).width() > 800){
-				andraHeaderhojd();
-			}else{
-				taBortHeader();
-			}
-		}
-
+	}
 }
 function andraHeaderhojd() {
 	if(storRubrik == true){

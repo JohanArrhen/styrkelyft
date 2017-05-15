@@ -61,13 +61,14 @@ html{
 #header {
   height:100%;
   flex-grow: 1,5;
-  min-width: 400px;
-  min-width: 40rem;
+  /*min-width: 400px;
+  min-width: 40rem;*/
   background-color: white;
 
   /*parent till img och bankpresssvartvit*/
   display: flex;
   align-items: flex-end;/*lägger bänken längst ner*/
+
 }
 
 #bankpressSvartvit{
@@ -97,9 +98,7 @@ html{
 
 /**    Meny:   **/
 nav {
-  padding-bottom: 2px;
-  padding-bottom: 0.2rem;
-  padding-bottom: 0;
+
 
 
   flex-grow: 1;
@@ -354,7 +353,7 @@ article{
     padding-top: 1.7rem;
     box-sizing: border-box;
     width: 100%;
-    border: 1px solid orange;
+    
 
   }
 
@@ -418,7 +417,7 @@ article{
 
     background-color: white;
     margin: 0;
-    padding: 3px;
+    padding: 0.7rem;
 
     /*padding: 0.3rem;*/
 
@@ -453,7 +452,7 @@ article{
 
 @media screen and (max-width: 400px){
   html{
-    font-size: 30%;
+    font-size: 40%;
 
   }
   /*#menyknapp{
@@ -462,12 +461,12 @@ article{
 }
 @media screen and (max-width: 350px){
   html{
-    font-size: 20%;
+    font-size: 35%;
 
 
   }
   #menyknapp{
-    padding-right: 4.5rem;
+
   }
 
 }
