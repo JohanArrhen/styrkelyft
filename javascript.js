@@ -9,8 +9,8 @@ window.onload = function() {
 
 
 
-	taBortOnodigaPilar();
-	$(window).on("resize", taBortOnodigaPilar);
+	taBortOnodigaPilarOchJusteraFadeBredd();
+	$(window).on("resize", taBortOnodigaPilarOchJusteraFadeBredd);
 
 
 
@@ -195,22 +195,31 @@ function expanderaMinimeraRegelbox() {
 
 
 	if($(fade).css("opacity") != 0){
+		$(fade).animate({"opacity": "0"}, 0);
+		this.src = "bilder/PilUpp.png";
 		$(reglerboxMinusPilar).animate({"max-height": "2000px"}, 1200, function(){
 				var height = $(reglerboxMinusPilar).css("height");
 
-				//ändra max-height till rätt höjd så att animationen startar direkt
+				//ändra max-height till rätt höjd så att animationen startar direkt på uppvägen
 				$(reglerboxMinusPilar).css("max-height", height);
 
-				 //testinnnk
+
+
+
 			});
-		$(fade).animate({"opacity": "0"}, 0);
-		this.src = "bilder/PilUpp.png";
+
+
+
+
+
 
 
 	}else{
 		$(reglerboxMinusPilar).animate({"max-height": "30rem"}, 300, function(){
-				$(fade).animate({"opacity": "100"}, 300)
-				uppNerPilar.src = "bilder/PilNer.png";
+				$(fade).animate({"opacity": "100"}, 300, function() {
+					uppNerPilar.src = "bilder/PilNer.png";
+				});
+
 
 			});
 
@@ -233,7 +242,7 @@ function expanderaRegelbox(){
 		var uppNerPilar = $($(reglerboxMinusPilar).siblings()[0]).children()[1];
 	}
 
-	$(reglerboxMinusPilar).animate({"max-height": "2000px"}, 1200, function(){
+			$(reglerboxMinusPilar).animate({"max-height": "2000px"}, 1200, function(){
 			var height = $(reglerboxMinusPilar).css("height");
 
 			$(reglerboxMinusPilar).css("max-height", height);
@@ -268,20 +277,47 @@ function okaOpacitet(){
 }
 
 
-function taBortOnodigaPilar() {
+function taBortOnodigaPilarOchJusteraFadeBredd() {
 	var textIbox = $(".reglerText");
 	var box = $(".reglerboxMinusPilar");
 	var uppNerPilar = $(".uppNerPilar");
+
+	var pilWidth = $($(".pil")[0]).width();
+	var boxWidth = $(box[0]).width();
+	var fadebox = $(".fadebox");
+
+	var fadeWidth = boxWidth - pilWidth;
+
+
+
+
+	// console.log("fadewith: " + fadeWidth);
+	// console.log("PilWidth: " + pilWidth);
+	// console.log("BoxWidth: " + boxWidth);
+	// console.log("fadebox: " + fadebox);
 
 	for(var i = 0; i < textIbox.length; i++){
 		var textIboxHojd = $(textIbox[i]).css("height");
 		var boxhojd = $(box[i]).css("height")
 
-		if(textIboxHojd < boxhojd){
-			$(uppNerPilar[i]).css("opacity", "0");
-		}else{
-			$(uppNerPilar[i]).css("opacity", "100");
+		$(fadebox[i]).css("width", fadeWidth);
+		$($(".pil")[i]).css("margin-right", "1.4rem");
+
+		textIboxHojd = parseInt(textIboxHojd);
+		boxhojd = parseInt(boxhojd);
+
+		// console.log("textIboxHojd " + i + " : " + textIboxHojd);
+		// console.log("boxhojd " + i + " : " + boxhojd);
+		if($(window).width() > 450) { //dvs inte för mobilversionen
+			if(textIboxHojd < boxhojd){
+
+				$(uppNerPilar[i]).css("opacity", "0");
+			}else{
+				$(uppNerPilar[i]).css("opacity", "100");
+			}
+
 		}
+
 	}
 
 }
