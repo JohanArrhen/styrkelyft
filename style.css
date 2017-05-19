@@ -1,4 +1,5 @@
 @charset "utf-8";
+
 /* CSS Document */
 
 
@@ -9,545 +10,464 @@ Meny: Tempus Sans ITC (Neucha från google fonts)
 
 */
 
-
-
 @font-face {
     font-family: 'stencilregular';
-    src: url('fonter/stencil-webfont.woff2') format('woff2'),
-         url('fonter/stencil-webfont.woff') format('woff');
+    src: url('fonter/stencil-webfont.woff2') format('woff2'), url('fonter/stencil-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
-
-}
-img{
-  display:block;
 }
 
-html{
-  font-size: 62.5%;
-}
-*{
-  margin: 0;
-  padding: 0;
+img {
+    display: block;
 }
 
-#storbox{
-
-  height: 100%;
-  width: 100%;
-  position: absolute;
+html {
+    font-size: 62.5%;
 }
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#storbox {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+
 
 /*Rubrik + Meny*/
+
 #topp {
-  height: 60px;
-  height: 6rem;
-
-
-  width: 100%;
-  border-bottom: 3px solid red;
-  border-bottom: 0.3rem solid red;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-end; /*sätter nav i botten av #topp */
-  /*overflow: hidden;*/
-  position: fixed;
-  z-index: 1;
-  background-color: white;
-
+    height: 60px;
+    height: 6rem;
+    width: 100%;
+    border-bottom: 3px solid red;
+    border-bottom: 0.3rem solid red;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    /*sätter nav i botten av #topp */
+    /*overflow: hidden;*/
+    position: fixed;
+    z-index: 1;
+    background-color: white;
 }
 
 
 /**    Rubrik     **/
+
 #header {
-  height:100%;
-  flex-grow: 1,5;
-  /*min-width: 400px;
+    height: 100%;
+    flex-grow: 1, 5;
+    /*min-width: 400px;
   min-width: 40rem;*/
-  background-color: white;
-
-  /*parent till img och bankpresssvartvit*/
-  display: flex;
-  align-items: flex-end;/*lägger bänken längst ner*/
-
+    background-color: white;
+    /*parent till img och bankpresssvartvit*/
+    display: flex;
+    align-items: flex-end;
+    /*lägger bänken längst ner*/
 }
 
-#bankpressSvartvit{
-  height: 90%;
-  padding-right: 10px;
-  padding-right: 1rem;
-
+#bankpressSvartvit {
+    height: 90%;
+    padding-right: 10px;
+    padding-right: 1rem;
 }
 
 #huvudrubrik {
-	font-family: stencilregular;
-	/*font-size: 50px;*/
- 	font-size: 6rem;
-  box-sizing: border-box;
-	color: red;
-  line-height: 75%;
+    font-family: stencilregular;
+    /*font-size: 50px;*/
+    font-size: 6rem;
+    box-sizing: border-box;
+    color: red;
+    line-height: 75%;
 }
 
-#menyknapp{
-
-  height: 0;
-  width: 0;
-
+#menyknapp {
+    height: 0;
+    width: 0;
 }
-
 
 
 /**    Meny:   **/
+
 nav {
-
-
-
-  flex-grow: 1;
-  /*som parent*/
-  display: flex;
-  justify-content : flex-end; /* #meny lägger sig till höger*/
-
+    flex-grow: 1;
+    /*som parent*/
+    display: flex;
+    justify-content: flex-end;
+    /* #meny lägger sig till höger*/
 }
 
-#meny {/* det är en ul*/
-	list-style-type: none;
-	width: 350px;
-
-  width: 35rem;
-	/*parent till li*/
-	display: flex;
-  	justify-content: space-around;
- 	align-items: flex-end; /*lägger menyn längst ner*/
-
-
+#meny {
+    /* det är en ul*/
+    list-style-type: none;
+    width: 350px;
+    width: 35rem;
+    /*parent till li*/
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    /*lägger menyn längst ner*/
 }
 
 .menylank {
-	font-family: 'Neucha', cursive;
-  font-size: 22px;
-  font-size: 2.2rem;
-	color: black;
-  text-decoration: none;
-
+    font-family: 'Neucha', cursive;
+    font-size: 22px;
+    font-size: 2.2rem;
+    color: black;
+    text-decoration: none;
 }
 
 .menylank:hover {
-  text-decoration: underline;
-
-}
-#aktiv{
-  color: red;
-  text-decoration: underline;
-  font-weight: bold;
+    text-decoration: underline;
 }
 
-article{
-	width: 100%;
-	height: 100%;
- 	/*padding-top: 50px;*/
-  padding-top: 7rem;
- 	box-sizing:border-box;
-
+#aktiv {
+    color: red;
+    text-decoration: underline;
+    font-weight: bold;
 }
 
-
-
+article {
+    width: 100%;
+    height: 100%;
+    /*padding-top: 50px;*/
+    padding-top: 7rem;
+    box-sizing: border-box;
+}
 
 
 /****  Bildspel ****/
 
-#bildspel{
-  box-sizing: border-box;
-  border: 0.4rem solid #000;
-  border-radius: 0.4rem;
-  margin: auto;
-  /*margin-top: 10rem;
-*/  max-width: 766px;
-  width: 100%;
+#bildspel {
+    box-sizing: border-box;
+    border: 0.4rem solid #000;
+    border-radius: 0.4rem;
+    margin: auto;
+    /*margin-top: 10rem;
+*/
+    max-width: 766px;
+    width: 100%;
 }
 
-.inaktivBild{
-	width: 0%;
+.inaktivBild {
+    width: 0%;
 }
 
-.aktivBild{
-  width: 100%;
+.aktivBild {
+    width: 100%;
 }
 
-#undertext{
-  height: 60px;
-  height: 6rem;
-  max-width: 766px;
-  background-color: rgb(90, 90, 90);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+#undertext {
+    height: 60px;
+    height: 6rem;
+    max-width: 766px;
+    background-color: rgb(90, 90, 90);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-#bildNamn{
-	font-size: 4rem;
-	padding-left: 1rem;
-  color: white;
-
+#bildNamn {
+    font-size: 4rem;
+    padding-left: 1rem;
+    color: white;
 }
 
-#pilbox{
-	height: 60px;
-	width: 60px;
-  height: 6rem;
-  width: 7em;
-	display: flex;
-	margin-right: 10px;
- 	 display: flex;
- justify-content: space-between;
-  align-items: center;
-
-
+#pilbox {
+    height: 60px;
+    width: 60px;
+    height: 6rem;
+    width: 7em;
+    display: flex;
+    margin-right: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.bildspelspil{
-
-	height: 50%;
-	position: relative;
-	cursor: pointer;
-
+.bildspelspil {
+    height: 50%;
+    position: relative;
+    cursor: pointer;
 }
-
 
 
 /*** Infobox ***/
-.infobox{
-  /*border: 0.5rem solid red;*/
-  margin-top: 2rem;
 
+.infobox {
+    /*border: 0.5rem solid red;*/
+    margin-top: 2rem;
 }
 
-.infoboxMinusPilar{
-  box-sizing: border-box;
-  width: 100%;
-  max-height: 30rem; /*auto för att expandera*/
-	/*height: auto;*/
-
-  border-radius: 0.5rem;
-
-  overflow: hidden;
-
-  border: 0.5rem solid red;
-
-
-
-
-
-}
-.platsForRubrikOchBild{
-  height: 30rem;
-
-
-  float: left;
-
-
-}
-.platsForRubrikOchBild img{
-  height: 70%;
-  padding: 0 2rem 0 2rem;
+.infoboxMinusPilar {
+    box-sizing: border-box;
+    width: 100%;
+    max-height: 30rem;
+    /*auto för att expandera*/
+    /*height: auto;*/
+    border-radius: 0.5rem;
+    overflow: hidden;
+    border: 0.5rem solid red;
 }
 
-.infoboxMinusPilar h2{
-  height: 20%;
-  display: block;
-  font-size: 3rem;
-  margin-top: 1rem;
-
-  text-align: center;
-
+.platsForRubrikOchBild {
+    height: 30rem;
+    float: left;
 }
+
+.platsForRubrikOchBild img {
+    height: 70%;
+    padding: 0 2rem 0 2rem;
+}
+
+.infoboxMinusPilar h2 {
+    height: 20%;
+    display: block;
+    font-size: 3rem;
+    margin-top: 1rem;
+    text-align: center;
+}
+
 .infoboxMinusPilar p {
-  font-size: 3rem;
-  padding: 1rem;
-  /*padding: 3rem;*/
-
-
+    font-size: 3rem;
+    padding: 1rem;
+    /*padding: 3rem;*/
 }
 
-.pil:hover{
-  width: 2.9%;
-  /*right: 0.1%;*/
+.pil:hover {
+    width: 2.9%;
+    /*right: 0.1%;*/
 }
 
-.uppNerPilar{
-
-	height: 4rem;
-  width: 100%;
-  position: relative;
-  top: -4.5rem;
-  left: 0.5rem;
-  margin-bottom: -4rem;
-
-
-  display: flex;
-  align-items: flex-end;
-
-}
-.fadebox{
-	width: 96%; /*100% -5rem*/
-  height: 5rem;
-  position: relative;
-
-  float: left;
-  display: flex;
-  align-items: flex-end;
-
-}
-.fade{
-	width: 100%;
-
-	height: 5rem;
-
-
+.uppNerPilar {
+    height: 4rem;
+    width: 100%;
+    position: relative;
+    top: -4.5rem;
+    left: 0.5rem;
+    margin-bottom: -4rem;
+    display: flex;
+    align-items: flex-end;
 }
 
-.pil{
-  width: 4%;
-  min-width: 5rem;
-  /*height: 4rem;*/
-  height: auto;
-  padding-bottom: 0.2rem;
-  float: right;
-  position: relative;
-  box-sizing: border-box;
-  background-color: white;
-
-}
-#regler, #tillbehor{
-
-	padding: 10rem 5rem 0 5rem;
-
-}
-.textlank{
-  font-family: 'Neucha', cursive;
-  font-size: 3rem;
-  color: black;
-  text-decoration: none;
-  margin-left: 1rem;
+.fadebox {
+    width: 96%;
+    /*100% -5rem*/
+    height: 5rem;
+    position: relative;
+    float: left;
+    display: flex;
+    align-items: flex-end;
 }
 
-.textlank:hover, .textlank:active{
-
-  text-decoration: underline;
+.fade {
+    width: 100%;
+    height: 5rem;
 }
-#regler a:active{
-  color: red;
+
+.pil {
+    width: 4%;
+    min-width: 5rem;
+    /*height: 4rem;*/
+    height: auto;
+    padding-bottom: 0.2rem;
+    float: right;
+    position: relative;
+    box-sizing: border-box;
+    background-color: white;
+}
+
+#regler, #tillbehor {
+    padding: 10rem 5rem 0 5rem;
+}
+
+.textlank {
+    font-family: 'Neucha', cursive;
+    font-size: 3rem;
+    color: black;
+    text-decoration: none;
+    margin-left: 1rem;
+}
+
+.textlank:hover, .textlank:active {
+    text-decoration: underline;
+}
+
+#regler a:active {
+    color: red;
+}
+.lankdestination{
+    position: relative;
+    top: -6rem;
 }
 
 
 /*** Tillbehör ***/
-#tillbehor{
 
+#tillbehor {}
 
-}
-#bilderOchCirklar{
-  margin: auto;
-  width: 40%;
-  min-width: 520px;
-  margin-top: 5rem;
-  border: 0.5rem solid red;
-  border-radius: 0.4rem;
-}
-#klickbarBild{
-  width: 100%;
-}
-.cirkelLank{
-  width: 15%;
-  height: 15%;
-  float: left;
-  position: relative;
-  top: 15%;
-  margin-bottom: -15%;
-
-}
-.cirkel{
-  height: 100%;
-  width: 100%;
-}
-.cirkelLank:hover{
-  cursor: pointer;
-
-}
-#tillbehorUndertext{
-  font-size: 3rem;
-  text-align: center;
-}
-
-
-@media screen and (max-width: 810px){
-  html{
-  font-size: 40%;
-  }
-  #bankpressSvartvit{
-    display: none;
-
-  }
-
-  #topp{
-    height: auto;
-    border-bottom: none;
-    padding-top: 1.7rem;
-    box-sizing: border-box;
-    width: 100%;
-
-
-  }
-
-
-  #header{
-    box-sizing: border-box;
-    width: 100%;
-    padding: 0.3rem;
-    border-bottom: 0.6rem solid red;
-
-
-
-
-  	display: flex;
-    justify-content: space-between;
-  	align-items: center;
-
-
-
-  }
-
-  #huvudrubrik{
-      padding: 0;
-      margin: 0;
-
-  }
-  #menyknapp{
-
-    height: 4rem;
-    width: 4rem;
-    margin-right: 0;
-
-
-
-  }
-
-  #meny { /* är en ul*/
-    display: block;
-    width: 100%;
-  }
-  nav{
-
-    display: inline; /*tar bort display: block*/
-    width: 100%;
-  }
-
-  .stangd{
-    height: 0;
-    display: none;
-    overflow: hidden;
-  }
-
-  .menylank {
-    float: left; /* gör att width 100% fungerar*/
-    text-align: center;
-    width: 100%;
-    box-sizing: border-box;
-
-    /*border-bottom: 2px solid red;*/
-    border-bottom: 0.4rem solid red;
-
-    background-color: white;
-    margin: 0;
-    padding: 0.7rem;
-
-    /*padding: 0.3rem;*/
-
-
-    /*font-size: 22px;*/
-    font-size: 2.2rem;
-    color: black;
-    text-decoration: none;
-
-    /*font-size: 30px;*/
-    font-size: 4rem;
-  }
-
-  nav:last-child {
-  border-bottom: 0.2rem solid red;
-  }
-
-
-
-
-
-}
-
-@media screen and (max-width: 768px) {/*Surfplatta, bildspel*/
-
-  #bildspel{
-
-    border-right: 0;
-    border-left: 0;
-  }
-  #bilderOchCirklar{
-
-  }
-}
-
-@media screen and (max-width: 450px){
-  #regler{
-    padding: 10rem 0rem 5rem 0rem;
-  }
-
-  .platsForRubrikOchBild{
-    height: auto;
-
-    width: 100%;
-    box-sizing: border-box;
-
-  }
-
-  .platsForRubrikOchBild img{
-    height: 20rem;
+#bilderOchCirklar {
     margin: auto;
-
-  }
-
-
-
+    width: 40%;
+    min-width: 520px;
+    margin-top: 10rem;
+    border: 0.5rem solid red;
+    border-radius: 0.4rem;
 }
 
-@media screen and (max-width: 520px){
-  #bilderOchCirklar{
-    border-left: 0;
-    boder-right: 0;
-    min-width: 100%;
+#klickbarBild {
+    width: 100%;
+}
 
+.cirkelLank {
+    width: 15%;
+    height: 15%;
+    float: left;
+    position: relative;
+    top: 15%;
+    margin-bottom: -15%;
+}
 
+.cirkel {
+    height: 100%;
+    width: 100%;
+}
 
-  }
+.cirkelLank:hover {
+    cursor: pointer;
+}
+
+#tillbehorUndertext {
+    font-size: 3rem;
+    text-align: center;
+}
+
+@media screen and (max-width: 810px) {
+    html {
+        font-size: 40%;
+    }
+    #bankpressSvartvit {
+        display: none;
+    }
+    #topp {
+        height: auto;
+        border-bottom: none;
+        padding-top: 1.7rem;
+        box-sizing: border-box;
+        width: 100%;
+    }
+    #header {
+        box-sizing: border-box;
+        width: 100%;
+        padding: 0.3rem;
+        border-bottom: 0.6rem solid red;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    #huvudrubrik {
+        padding: 0;
+        margin: 0;
+    }
+    #menyknapp {
+        height: 4rem;
+        width: 4rem;
+        margin-bottom: 1rem;
+    }
+    #meny {
+        /* är en ul*/
+        display: block;
+        width: 100%;
+    }
+    nav {
+        display: inline;
+        /*tar bort display: block*/
+        width: 100%;
+    }
+    .stangd {
+        height: 0;
+        display: none;
+        overflow: hidden;
+    }
+    .menylank {
+        float: left;
+        /* gör att width 100% fungerar*/
+        text-align: center;
+        width: 100%;
+        box-sizing: border-box;
+        /*border-bottom: 2px solid red;*/
+        border-bottom: 0.4rem solid red;
+        background-color: white;
+        margin: 0;
+        padding: 0.7rem;
+        /*padding: 0.3rem;*/
+        /*font-size: 22px;*/
+        font-size: 2.2rem;
+        color: black;
+        text-decoration: none;
+        /*font-size: 30px;*/
+        font-size: 4rem;
+    }
+    nav:last-child {
+        border-bottom: 0.2rem solid red;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    /*Surfplatta, bildspel*/
+    #bildspel {
+        border-right: 0;
+        border-left: 0;
+    }
+    #bilderOchCirklar {}
 }
 
 
-@media screen and (max-width: 400px){
-  html{
-    font-size: 40%;
 
-  }
-  /*#menyknapp{
+@media screen and (max-width: 540px) {
+    #bilderOchCirklar {
+        border-left: 0;
+        border-right: 0;
+        min-width: 100%;
+    }
+    #tillbehor {
+        padding: 0;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    #regler {
+        padding: 10rem 0rem 5rem 0rem;
+    }
+    .platsForRubrikOchBild {
+        height: auto;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    .platsForRubrikOchBild img {
+        height: 20rem;
+        margin: auto;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    html {
+        font-size: 40%;
+    }
+    /*#menyknapp{
     margin-right: 5rem;
   }*/
 }
-@media screen and (max-width: 350px){
-  html{
-    font-size: 35%;
 
-
-  }
-  #menyknapp{
-
-  }
-
+@media screen and (max-width: 350px) {
+    html {
+        font-size: 35%;
+    }
+    #menyknapp {}
 }
 
 
