@@ -215,14 +215,14 @@ article{
 
 
 
-/*** Regler ***/
-.reglerbox{
+/*** Infobox ***/
+.infobox{
   /*border: 0.5rem solid red;*/
   margin-top: 2rem;
 
 }
 
-.reglerboxMinusPilar{
+.infoboxMinusPilar{
   box-sizing: border-box;
   width: 100%;
   max-height: 30rem; /*auto för att expandera*/
@@ -252,15 +252,16 @@ article{
   padding: 0 2rem 0 2rem;
 }
 
-.reglerboxMinusPilar h2{
+.infoboxMinusPilar h2{
   height: 20%;
   display: block;
   font-size: 3rem;
+  margin-top: 1rem;
 
   text-align: center;
 
 }
-.reglerboxMinusPilar p {
+.infoboxMinusPilar p {
   font-size: 3rem;
   padding: 1rem;
   /*padding: 3rem;*/
@@ -317,12 +318,12 @@ article{
   background-color: white;
 
 }
-#regler{
+#regler, #tillbehor{
 
 	padding: 10rem 5rem 0 5rem;
 
 }
-#regler a{
+.textlank{
   font-family: 'Neucha', cursive;
   font-size: 3rem;
   color: black;
@@ -330,7 +331,7 @@ article{
   margin-left: 1rem;
 }
 
-#regler a:hover, #regler a:active{
+.textlank:hover, .textlank:active{
 
   text-decoration: underline;
 }
@@ -339,9 +340,43 @@ article{
 }
 
 
+/*** Tillbehör ***/
+#tillbehor{
 
 
+}
+#bilderOchCirklar{
+  margin: auto;
+  width: 40%;
+  min-width: 520px;
+  margin-top: 5rem;
+  border: 0.5rem solid red;
+  border-radius: 0.4rem;
+}
+#klickbarBild{
+  width: 100%;
+}
+.cirkelLank{
+  width: 15%;
+  height: 15%;
+  float: left;
+  position: relative;
+  top: 15%;
+  margin-bottom: -15%;
 
+}
+.cirkel{
+  height: 100%;
+  width: 100%;
+}
+.cirkelLank:hover{
+  cursor: pointer;
+
+}
+#tillbehorUndertext{
+  font-size: 3rem;
+  text-align: center;
+}
 
 
 @media screen and (max-width: 810px){
@@ -447,12 +482,15 @@ article{
 
 }
 
-@media screen and (max-width: 766px) {/*Surfplatta, bildspel*/
+@media screen and (max-width: 768px) {/*Surfplatta, bildspel*/
 
   #bildspel{
 
     border-right: 0;
     border-left: 0;
+  }
+  #bilderOchCirklar{
+
   }
 }
 
@@ -460,11 +498,6 @@ article{
   #regler{
     padding: 10rem 0rem 5rem 0rem;
   }
-
-  .reglerboxMinusPilar{
-
-  }
-
 
   .platsForRubrikOchBild{
     height: auto;
@@ -480,9 +513,20 @@ article{
 
   }
 
+
+
 }
 
+@media screen and (max-width: 520px){
+  #bilderOchCirklar{
+    border-left: 0;
+    boder-right: 0;
+    min-width: 100%;
 
+
+
+  }
+}
 
 
 @media screen and (max-width: 400px){
