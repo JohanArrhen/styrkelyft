@@ -100,11 +100,12 @@ function togglePlayPause(){
     if($($(".playPause")[0]).is(".play")){
         stoppaBildspelsTimer();
         $(".playPause")[0].src = "bilder/pause.png";
-        $($(".playPause")[0]).toggleClass("play");
+        $($(".playPause")[0]).removeClass("play");
     } else {
+        bildBytePlus();
         bildspelsTimer = setInterval(bildBytePlus, 2000)
         $(".playPause")[0].src = "bilder/play.png";
-        $($(".playPause")[0]).toggleClass("play");
+        $($(".playPause")[0]).addClass("play");
     }
 }
 
