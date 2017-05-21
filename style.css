@@ -178,15 +178,35 @@ article {
 #bildNamn {
 
     font-size: 4rem;
+    padding-top: 1rem;
     padding-left: 1rem;
     color: white;
-}
+    font-family: 'Neucha', cursive;
 
-#pilbox {
-    height: 60px;
-    width: 60px;
+
+}
+#bildNamnMobil{
+    font-size: 4rem;
+    padding-left: 1rem;
+    color: black;
+    padding-top: 2rem;
+    text-align: center;
+    font-family: 'Neucha', cursive;
+}
+#kontroller {
+
     height: 6rem;
-    width: 7em;
+    width: 23rem;
+    display: flex;
+    margin-right: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#pilbox {
+
+    height: 6rem;
+    width: 10rem;
     display: flex;
     margin-right: 10px;
     display: flex;
@@ -195,8 +215,11 @@ article {
 }
 
 .bildspelspil {
-    height: 50%;
-    position: relative;
+    height: 70%;
+    cursor: pointer;
+}
+.playPause{
+    height: 120%;
     cursor: pointer;
 }
 
@@ -491,8 +514,9 @@ article {
     #bildspel {
         border-right: 0;
         border-left: 0;
-        margin-top: 10rem;
+
     }
+
 
 
 }
@@ -526,6 +550,11 @@ article {
     .varldsmastarebox{
         width: 100%;
     }
+
+    #undertext{
+        justify-content: center;
+    }
+
 }
 
 @media screen and (max-width: 400px) {

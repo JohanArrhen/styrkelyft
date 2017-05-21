@@ -26,11 +26,12 @@ window.onload = function() {
 
     //Bildspel
     bildspelsTimer = setInterval(bildBytePlus, 2000)
+    bildBytePlus();
     $("#hoger").on("click", bildBytePlus);
     $("#hoger").on("click", stoppaBildspelsTimer);
     $("#vanster").on("click", bildByteMinus);
     $("#vanster").on("click", stoppaBildspelsTimer);
-
+    $(".playPause").on("click", togglePlayPause);
 
 };
 
@@ -53,7 +54,13 @@ function bildBytePlus() {
     }
 
     var lyftarnamn = bilder[bildnummer].alt.replace(/bild på/i, "");
-    $("#bildNamn").html(lyftarnamn);
+
+    if($(window).width() > 450) {
+        $("#bildNamn").html(lyftarnamn);
+    } else {
+        $("#bildNamnMobil").html(lyftarnamn);
+    }
+
 
 }
 
@@ -74,14 +81,32 @@ function bildByteMinus() {
         $(bilder[bildnummer]).removeClass("inaktivBild").addClass("aktivBild");
     }
     var lyftarnamn = bilder[bildnummer].alt.replace(/bild på/i, "");
-    $("#bildNamn").html(lyftarnamn);
+
+    if($(window).width() > 450) {
+        $("#bildNamn").html(lyftarnamn);
+    } else {
+        $("#bildNamnMobil").html(lyftarnamn);
+    }
 
 }
 function stoppaBildspelsTimer() {
     clearTimeout(bildspelsTimer);
+    $(".playPause")[0].src = "bilder/pause.png";
+    $($(".playPause")[0]).removeClass("play");
 
 }
+function togglePlayPause(){
 
+    if($($(".playPause")[0]).is(".play")){
+        stoppaBildspelsTimer();
+        $(".playPause")[0].src = "bilder/pause.png";
+        $($(".playPause")[0]).toggleClass("play");
+    } else {
+        bildspelsTimer = setInterval(bildBytePlus, 2000)
+        $(".playPause")[0].src = "bilder/play.png";
+        $($(".playPause")[0]).toggleClass("play");
+    }
+}
 
 function scroll() {
     var scrollPosition = $(window).scrollTop(); //hur långt det är scrollat i webbläsaren
