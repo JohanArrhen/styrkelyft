@@ -365,13 +365,14 @@ article {
 
 /***Styrkelyftare***/
 #varldsmastare {
+    max-height: 60rem;
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
 }
 
 .styrkelyftare {
-    display: block;
+
     list-style-type: none;
     padding: 1rem;
 }
