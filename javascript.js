@@ -11,7 +11,7 @@ window.onload = function() {
     bildspelsfunktioner();
     tillbehorFunktioner();
     infoboxFunktioner();
-};
+}
 
 //***MENY***//
 function menyFunktioner() {
@@ -102,7 +102,6 @@ function scrollarNer() {
 
     nuvarandeScrollPosition = $(window).scrollTop();
 
-
     if (nuvarandeScrollPosition > foregaendeScrollPosition) {
         //console.log("nedåtscroll");
         nedatscroll = true;
@@ -111,10 +110,7 @@ function scrollarNer() {
         nedatscroll = false;
     }
     foregaendeScrollPosition = nuvarandeScrollPosition;
-
-};
-
-
+}
 
 //***BILDSPEL***//
 function bildspelsfunktioner(){
@@ -127,8 +123,8 @@ function bildspelsfunktioner(){
         $("#vanster").on("click", stoppaBildspelsTimer);
         $(".playPause").on("click", togglePlayPause);
     }
-
 }
+
 function bildBytePlus() {
     var bilder = $(".bildspel");
     if (bildnummer == undefined) {
@@ -208,6 +204,7 @@ function tillbehorFunktioner() {
     procentTillPixlar();
     $(window).on("resize", procentTillPixlar);
 }
+
 function procentTillPixlar() {
     var sidlangdKlickbarBild = $("#klickbarBild").height();
 
@@ -245,17 +242,11 @@ function infoboxFunktioner() {
     $(".fadebox").hover(minskaOpacitet, okaOpacitet);
 }
 
-
 function expanderaMinimeraInfobox() {
 
     var infoboxMinusPilar = $(this).parent().parent().children()[0];
     var fade = $($(this).prev()).children()[0];
-    //.css("height", "auto");
-    //infoboxMinusPilar.animate({"height": "auto"}, 500);
     var uppNerPilar = this;
-
-
-
 
     if ($(fade).css("opacity") != 0) {
         $(fade).animate({
@@ -266,10 +257,8 @@ function expanderaMinimeraInfobox() {
             "max-height": "2000px"
         }, 1200, function() {
             var height = $(infoboxMinusPilar).css("height");
-
             //ändra max-height till rätt höjd så att animationen startar direkt på uppvägen
             $(infoboxMinusPilar).css("max-height", height);
-
         });
 
     } else {
@@ -282,11 +271,8 @@ function expanderaMinimeraInfobox() {
                 uppNerPilar.src = "bilder/PilNer.png";
             });
         });
-
-
-
     }
-};
+}
 
 function expanderaInfobox() {
 
@@ -311,17 +297,11 @@ function expanderaInfobox() {
         $(infoboxMinusPilar).css("max-height", height);
     });
 
-
-
     $(fade).animate({
         "opacity": "0"
     }, 0);
 
     uppNerPilar.src = "bilder/PilUpp.png";
-
-
-
-
 }
 
 function minimeraAllaRegelBoxar() {
@@ -340,12 +320,8 @@ function minimeraAllaRegelBoxar() {
         }, 0);
         console.log(pilar[i]);
         pilar[i].src = "bilder/PilNer.png";
-
     }
-
 }
-
-
 
 function minskaOpacitet() {
     var fade = $(this).children()[0];
@@ -367,7 +343,6 @@ function taBortOnodigaPilarOchJusteraFadeBredd() {
     if ($(window).width > 800) { //zoom ut på mobil räknas som resize och drar in boxarna.
         minimeraAllaRegelBoxar();
     }
-
 
     var textIbox = $(".infoText");
     var box = $(".infoboxMinusPilar");
@@ -393,8 +368,6 @@ function taBortOnodigaPilarOchJusteraFadeBredd() {
         textIboxHojd = parseInt(textIboxHojd);
         boxhojd = parseInt(boxhojd);
 
-        // console.log("textIboxHojd " + i + " : " + textIboxHojd);
-        // console.log("boxhojd " + i + " : " + boxhojd);
         if ($(window).width() > 450) { //dvs inte för mobilversionen
             if (textIboxHojd < boxhojd) {
 
@@ -408,7 +381,5 @@ function taBortOnodigaPilarOchJusteraFadeBredd() {
         }
         $(fadebox[i]).css("width", fadeWidth);
         $($(".pil")[i]).css("margin-right", "1.4rem");
-
     }
-
 }

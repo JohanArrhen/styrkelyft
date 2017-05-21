@@ -16,15 +16,18 @@ img {
 html {
     font-size: 62.5%;
 }
+
 * {
     margin: 0;
     padding: 0;
 }
+
 #storbox {
     height: 100%;
     width: 100%;
     position: absolute;
 }
+
 
 /*Rubrik + Meny*/
 #topp {
@@ -39,22 +42,28 @@ html {
     align-items: flex-end;
 }
 
+
 /**    Rubrik     **/
 header {
     height: 100%;
     flex-grow: 1, 5;
     background-color: white;
-    display: flex; /*parent till img och bankpresssvartvit*/
-    align-items: flex-end; /*lägger bänken längst ner*/
+    display: flex;
+    /*parent till img och bankpresssvartvit*/
+    align-items: flex-end;
+    /*lägger bänken längst ner*/
 }
+
 header a {
     text-decoration: none;
 }
+
 #bankpressSvartvit {
     height: 90%;
     padding-right: 10px;
     padding-right: 1rem;
 }
+
 #huvudrubrik {
     font-family: stencilregular;
     /*font-size: 50px;*/
@@ -63,17 +72,21 @@ header a {
     color: red;
     line-height: 75%;
 }
+
 #menyknapp {
     height: 0;
     width: 0;
 }
 
+
 /**    Meny:   **/
+
 nav {
     flex-grow: 1;
     display: flex;
     justify-content: flex-end;
 }
+
 #meny {
     list-style-type: none;
     width: 35rem;
@@ -81,20 +94,24 @@ nav {
     justify-content: space-around;
     align-items: flex-end;
 }
+
 .menylank {
     font-family: 'Neucha', cursive;
     font-size: 2.2rem;
     color: black;
     text-decoration: none;
 }
+
 .menylank:hover {
     text-decoration: underline;
 }
+
 #aktiv {
     color: red;
     text-decoration: underline;
     font-weight: bold;
 }
+
 article {
     width: 100%;
     height: 100%;
@@ -102,8 +119,8 @@ article {
     box-sizing: border-box;
 }
 
-/****  Bildspel ****/
 
+/****  Bildspel ****/
 #bildspel {
     box-sizing: border-box;
     border: 0.5rem solid red;
@@ -112,12 +129,15 @@ article {
     max-width: 766px;
     width: 100%;
 }
+
 .inaktivBild {
     width: 0%;
 }
+
 .aktivBild {
     width: 100%;
 }
+
 #undertext {
     height: 6rem;
     max-width: 766px;
@@ -126,6 +146,7 @@ article {
     justify-content: space-between;
     align-items: center;
 }
+
 #bildNamn {
     font-size: 4rem;
     padding-top: 1rem;
@@ -133,6 +154,7 @@ article {
     color: white;
     font-family: 'Neucha', cursive;
 }
+
 #bildNamnMobil {
     font-size: 4rem;
     padding-left: 1rem;
@@ -141,6 +163,7 @@ article {
     text-align: center;
     font-family: 'Neucha', cursive;
 }
+
 #kontroller {
     height: 6rem;
     width: 23rem;
@@ -149,6 +172,7 @@ article {
     justify-content: space-between;
     align-items: center;
 }
+
 #pilbox {
     height: 6rem;
     width: 10rem;
@@ -157,35 +181,43 @@ article {
     justify-content: space-between;
     align-items: center;
 }
+
 .bildspelspil {
     height: 70%;
     cursor: pointer;
 }
+
 .playPause {
     height: 120%;
     cursor: pointer;
 }
 
+
 /*** Infobox ***/
 .infobox {
     margin-top: 2rem;
 }
+
 .infoboxMinusPilar {
     box-sizing: border-box;
     width: 100%;
-    max-height: 30rem; /*auto för att expandera*/
+    max-height: 30rem;
+    /*auto för att expandera*/
     overflow: hidden;
     border: 0.5rem solid red;
     border-radius: 0.5rem;
 }
+
 .platsForRubrikOchBild {
     height: 30rem;
     float: left;
 }
+
 .platsForRubrikOchBild img {
     height: 70%;
     padding: 0 2rem 0 2rem;
 }
+
 .infoboxMinusPilar h2 {
     height: 20%;
     display: block;
@@ -195,22 +227,27 @@ article {
     font-family: stencilregular;
     color: red;
 }
+
 .infoboxMinusPilar p {
     font-size: 3rem;
     padding: 1rem;
 }
+
 .infoboxMinusPilar h3 {
     font-size: 3rem;
     padding-left: 1rem;
 }
+
 .infoboxMinusPilar #tillbehorlista {
     list-style-position: inside;
     font-size: 3rem;
     padding: 1em;
 }
+
 .pil:hover {
     width: 2.9%;
 }
+
 .uppNerPilar {
     height: 4rem;
     width: 100%;
@@ -222,6 +259,7 @@ article {
     align-items: flex-end;
     justify-content: flex-end;
 }
+
 .fadebox {
     width: 96%;
     height: 5rem;
@@ -229,10 +267,12 @@ article {
     display: flex;
     align-items: flex-end;
 }
+
 .fade {
     width: 100%;
     height: 5rem;
 }
+
 .pil {
     width: 4%;
     min-width: 5rem;
@@ -242,27 +282,34 @@ article {
     box-sizing: border-box;
     background-color: white;
 }
+
 #regler, #tillbehor {
     padding: 10rem 5rem 0 5rem;
 }
+
 .textlank {
     font-family: 'Neucha', cursive;
     font-size: 3rem;
     color: black;
     text-decoration: none;
 }
+
 .textlank:hover, .textlank:active {
     text-decoration: underline;
 }
+
 #regler a:active {
     color: red;
 }
+
 .lankdestination {
     position: relative;
     top: -6rem;
 }
 
+
 /*** Tillbehör ***/
+
 #bilderOchCirklar {
     margin: auto;
     width: 40%;
@@ -271,9 +318,11 @@ article {
     border: 0.5rem solid red;
     border-radius: 0.4rem;
 }
+
 #klickbarBild {
     width: 100%;
 }
+
 .cirkelLank {
     width: 15%;
     height: 15%;
@@ -282,6 +331,7 @@ article {
     top: 15%;
     margin-bottom: -15%;
 }
+
 .cirkel {
     height: 100%;
     width: 100%;
@@ -298,7 +348,6 @@ article {
 
 
 /***Styrkelyftare***/
-
 #varldsmastare {
     display: flex;
     justify-content: space-around;
@@ -403,11 +452,9 @@ article {
     }
     .menylank {
         float: left;
-        /* gör att width 100% fungerar*/
         text-align: center;
         width: 100%;
         box-sizing: border-box;
-        /*border-bottom: 2px solid red;*/
         border-bottom: 0.4rem solid red;
         background-color: white;
         margin: 0;
@@ -423,7 +470,6 @@ article {
 }
 
 @media screen and (max-width: 768px) {
-    /*Surfplatta, bildspel*/
     #bildspel {
         border-right: 0;
         border-left: 0;
@@ -456,6 +502,8 @@ article {
     }
     .varldsmastarebox {
         width: 100%;
+        border-left: 0;
+        border-right: 0;
     }
     #undertext {
         justify-content: center;
