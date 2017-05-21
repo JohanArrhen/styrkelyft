@@ -1,113 +1,34 @@
 // JavaScript Document
-var storRubrik = true;
-var bildnummer;
-var foregaendeScrollPosition;
-var nuvarandeScrollPosition,
+var storRubrik = true,
+    bildnummer,
+    foregaendeScrollPosition,
+    nuvarandeScrollPosition,
     nedatscroll,
     bildspelsTimer;
 
 window.onload = function() {
-    procentTillPixlar();
-    $(window).on("resize", procentTillPixlar);
+    menyFunktioner();
+    bildspelsfunktioner();
+    tillbehorFunktioner();
+    infoboxFunktioner();
+};
 
-    taBortOnodigaPilarOchJusteraFadeBredd();
-    $(window).on("resize", taBortOnodigaPilarOchJusteraFadeBredd);
-
-
-
+//***MENY***//
+function menyFunktioner() {
+    document.addEventListener("scroll", scroll);
+    document.addEventListener("scroll", scrollarNer);
     minimeraMeny();
     $("#menyknapp").on("click", expanderaMeny);
     $("article").on("click", minimeraMeny);
-    $(".pil").on("click", expanderaMinimeraRegelbox);
-    $(".infoText").on("click", expanderaRegelbox);
-    $(".fadebox").on("click", expanderaRegelbox);
 
-    $(".fadebox").hover(minskaOpacitet, okaOpacitet);
-
-    //Bildspel
-    bildspelsTimer = setInterval(bildBytePlus, 2000)
-    bildBytePlus();
-    $("#hoger").on("click", bildBytePlus);
-    $("#hoger").on("click", stoppaBildspelsTimer);
-    $("#vanster").on("click", bildByteMinus);
-    $("#vanster").on("click", stoppaBildspelsTimer);
-    $(".playPause").on("click", togglePlayPause);
-
+}
+function expanderaMeny() {
+    $("nav").toggleClass("stangd", 1000);
 };
 
-
-function bildBytePlus() {
-    var bilder = $(".bildspel");
-    if (bildnummer == undefined) {
-        bildnummer = 0;
-    }
-
-    bildnummer++;
-
-    if (bildnummer > bilder.length - 1) {
-        $(bilder[bilder.length - 1]).removeClass("aktivBild").addClass("inaktivBild");
-        $(bilder[0]).removeClass("inaktivBild").addClass("aktivBild");
-        bildnummer = 0;
-    } else {
-        $(bilder[bildnummer - 1]).removeClass("aktivBild").addClass("inaktivBild");
-        $(bilder[bildnummer]).removeClass("inaktivBild").addClass("aktivBild");
-    }
-
-    var lyftarnamn = bilder[bildnummer].alt.replace(/bild på/i, "");
-
-    if($(window).width() > 450) {
-        $("#bildNamn").html(lyftarnamn);
-    } else {
-        $("#bildNamnMobil").html(lyftarnamn);
-    }
-
-
-}
-
-function bildByteMinus() {
-    var bilder = $(".bildspel");
-    if (bildnummer == undefined) {
-        bildnummer = 0;
-    }
-
-    bildnummer--;
-
-    if (bildnummer < 0) {
-        $(bilder[0]).removeClass("aktivBild").addClass("inaktivBild");
-        $(bilder[bilder.length - 1]).removeClass("inaktivBild").addClass("aktivBild");
-        bildnummer = bilder.length - 1;
-    } else {
-        $(bilder[bildnummer + 1]).removeClass("aktivBild").addClass("inaktivBild");
-        $(bilder[bildnummer]).removeClass("inaktivBild").addClass("aktivBild");
-    }
-    var lyftarnamn = bilder[bildnummer].alt.replace(/bild på/i, "");
-
-    if($(window).width() > 450) {
-        $("#bildNamn").html(lyftarnamn);
-    } else {
-        $("#bildNamnMobil").html(lyftarnamn);
-    }
-
-}
-function stoppaBildspelsTimer() {
-    clearTimeout(bildspelsTimer);
-    $(".playPause")[0].src = "bilder/pause.png";
-    $($(".playPause")[0]).removeClass("play");
-
-}
-function togglePlayPause(){
-
-    if($($(".playPause")[0]).is(".play")){
-        stoppaBildspelsTimer();
-        $(".playPause")[0].src = "bilder/pause.png";
-        $($(".playPause")[0]).removeClass("play");
-    } else {
-        bildBytePlus();
-        bildspelsTimer = setInterval(bildBytePlus, 2000)
-        $(".playPause")[0].src = "bilder/play.png";
-        $($(".playPause")[0]).addClass("play");
-    }
-}
+function minimeraMeny() {
+    $("nav").addClass("stangd");
+};
 
 function scroll() {
     var scrollPosition = $(window).scrollTop(); //hur långt det är scrollat i webbläsaren
@@ -118,7 +39,6 @@ function scroll() {
 
 function anpassaHeader() {
 
-    //console.log("ären ner eller? " + nedatscroll);
     if ($(document).height() - $(window).height() > 200) { //hindrar menyn från att gå upp och ner när det är scroll upp på överta 200px
 
         var hogstaScrollvarde = $(document).height() - $(window).height(); //documentets höjd - skärmens höjd
@@ -128,7 +48,6 @@ function anpassaHeader() {
             } else {
                 taBortHeader();
             }
-
         } else if (storRubrik == false && nedatscroll == false && $(window).scrollTop() > 200 && $(window).scrollTop() < hogstaScrollvarde - 100) {
             if ($(window).width() > 800) {
                 andraHeaderhojd();
@@ -157,7 +76,6 @@ function andraHeaderhojd() {
         }, 100);
         storRubrik = true;
     }
-
 }
 
 function taBortHeader() {
@@ -173,36 +91,7 @@ function taBortHeader() {
         }, 500);
         storRubrik = true;
     }
-
 }
-
-
-// function toppHeight(){
-//   if(scrollPosition > 200 && storRubrik == true){ //scrollat mer än 200px men rubriken är stor
-//     $("#huvudrubrik").animate({"font-size": "3rem"}, 100);
-//     $("#topp").animate({"height": "3rem"}, 100);
-//     storRubrik = false;
-//   }
-//   if(scrollPosition < 200 && storRubrik != true){ //scrollat mindre än 200px men rubriken är inte stor
-//
-// 			$("#huvudrubrik").animate({"font-size": "6rem"}, 100);
-// 			$("#topp").animate({"height": "6rem"}, 100);
-// 			storRubrik = true;
-//   		}
-// 	}
-// }
-
-
-function expanderaMeny() {
-    $("nav").toggleClass("stangd", 1000);
-};
-
-function minimeraMeny() {
-    $("nav").addClass("stangd");
-};
-
-
-
 
 function scrollarNer() {
 
@@ -212,11 +101,6 @@ function scrollarNer() {
     }
 
     nuvarandeScrollPosition = $(window).scrollTop();
-
-
-
-    // console.log("nuvarandeScrollPosition: " + nuvarandeScrollPosition);
-    // console.log("foregaendeScrollPosition: " + foregaendeScrollPosition);
 
 
     if (nuvarandeScrollPosition > foregaendeScrollPosition) {
@@ -232,7 +116,137 @@ function scrollarNer() {
 
 
 
-function expanderaMinimeraRegelbox() {
+//***BILDSPEL***//
+function bildspelsfunktioner(){
+    if($("body").is(".bildspelsSida")){
+        bildspelsTimer = setInterval(bildBytePlus, 2000)
+        bildBytePlus();
+        $("#hoger").on("click", bildBytePlus);
+        $("#hoger").on("click", stoppaBildspelsTimer);
+        $("#vanster").on("click", bildByteMinus);
+        $("#vanster").on("click", stoppaBildspelsTimer);
+        $(".playPause").on("click", togglePlayPause);
+    }
+
+}
+function bildBytePlus() {
+    var bilder = $(".bildspel");
+    if (bildnummer == undefined) {
+        bildnummer = 0;
+    }
+
+    bildnummer++;
+
+    if (bildnummer > bilder.length - 1) {
+        $(bilder[bilder.length - 1]).removeClass("aktivBild").addClass("inaktivBild");
+        $(bilder[0]).removeClass("inaktivBild").addClass("aktivBild");
+        bildnummer = 0;
+    } else {
+        $(bilder[bildnummer - 1]).removeClass("aktivBild").addClass("inaktivBild");
+        $(bilder[bildnummer]).removeClass("inaktivBild").addClass("aktivBild");
+    }
+
+    var lyftarnamn = bilder[bildnummer].alt.replace(/bild på/i, "");
+
+    if ($(window).width() > 450) {
+        $("#bildNamn").html(lyftarnamn);
+        $("#bildNamnMobil").html("");
+    } else {
+        $("#bildNamnMobil").html(lyftarnamn);
+        $("#bildNamn").html("");
+    }
+}
+
+function bildByteMinus() {
+    var bilder = $(".bildspel");
+    if (bildnummer == undefined) {
+        bildnummer = 0;
+    }
+
+    bildnummer--;
+
+    if (bildnummer < 0) {
+        $(bilder[0]).removeClass("aktivBild").addClass("inaktivBild");
+        $(bilder[bilder.length - 1]).removeClass("inaktivBild").addClass("aktivBild");
+        bildnummer = bilder.length - 1;
+    } else {
+        $(bilder[bildnummer + 1]).removeClass("aktivBild").addClass("inaktivBild");
+        $(bilder[bildnummer]).removeClass("inaktivBild").addClass("aktivBild");
+    }
+    var lyftarnamn = bilder[bildnummer].alt.replace(/bild på/i, "");
+
+    if ($(window).width() > 450) {
+        $("#bildNamn").html(lyftarnamn);
+    } else {
+        $("#bildNamnMobil").html(lyftarnamn);
+    }
+}
+
+function stoppaBildspelsTimer() {
+    clearTimeout(bildspelsTimer);
+    $(".playPause")[0].src = "bilder/pause.png";
+    $($(".playPause")[0]).removeClass("play");
+
+}
+
+function togglePlayPause() {
+
+    if ($($(".playPause")[0]).is(".play")) {
+        stoppaBildspelsTimer();
+        $(".playPause")[0].src = "bilder/pause.png";
+        $($(".playPause")[0]).removeClass("play");
+    } else {
+        bildBytePlus();
+        bildspelsTimer = setInterval(bildBytePlus, 2000)
+        $(".playPause")[0].src = "bilder/play.png";
+        $($(".playPause")[0]).addClass("play");
+    }
+}
+
+//***TILLBEHÖR***//
+function tillbehorFunktioner() {
+    procentTillPixlar();
+    $(window).on("resize", procentTillPixlar);
+}
+function procentTillPixlar() {
+    var sidlangdKlickbarBild = $("#klickbarBild").height();
+
+    var cirkel1 = $(".cirkelLank")[0];
+    var cirkel2 = $(".cirkelLank")[1];
+    var cirkel3 = $(".cirkelLank")[2];
+
+    //cirkel 1
+    var cirkel1Top = sidlangdKlickbarBild * -0.42;
+    var cirkel1Left = sidlangdKlickbarBild * 0.48;
+    $(cirkel1).css("top", cirkel1Top);
+    $(cirkel1).css("left", cirkel1Left);
+
+
+    //cirkel 2
+    var cirkel2Top = sidlangdKlickbarBild * -0.67;
+    var cirkel2Left = sidlangdKlickbarBild * 0.46;
+    $(cirkel2).css("top", cirkel2Top);
+    $(cirkel2).css("left", cirkel2Left);
+
+    //cirkel 3
+    var cirkel3Top = sidlangdKlickbarBild * -0.88;
+    var cirkel3Left = sidlangdKlickbarBild * 0.58;
+    $(cirkel3).css("top", cirkel3Top);
+    $(cirkel3).css("left", cirkel3Left);
+}
+
+//***INFOBOX***//
+function infoboxFunktioner() {
+    taBortOnodigaPilarOchJusteraFadeBredd();
+    $(window).on("resize", taBortOnodigaPilarOchJusteraFadeBredd);
+    $(".pil").on("click", expanderaMinimeraInfobox);
+    $(".infoText").on("click", expanderaInfobox);
+    $(".fadebox").on("click", expanderaInfobox);
+    $(".fadebox").hover(minskaOpacitet, okaOpacitet);
+}
+
+
+function expanderaMinimeraInfobox() {
 
     var infoboxMinusPilar = $(this).parent().parent().children()[0];
     var fade = $($(this).prev()).children()[0];
@@ -274,7 +288,7 @@ function expanderaMinimeraRegelbox() {
     }
 };
 
-function expanderaRegelbox() {
+function expanderaInfobox() {
 
     var kanskeFade = $(this).children()[0];
 
@@ -303,7 +317,7 @@ function expanderaRegelbox() {
         "opacity": "0"
     }, 0);
 
-	uppNerPilar.src = "bilder/PilUpp.png";
+    uppNerPilar.src = "bilder/PilUpp.png";
 
 
 
@@ -332,15 +346,6 @@ function minimeraAllaRegelBoxar() {
 }
 
 
-// if(infoboxMinusPilar.css("height") == "auto"){
-// 	this.src = "bilder/PilUpp.png";
-// 	console.log("lång jävel");
-//
-// }else{
-// 	this.src = "bilder/PilNer.png";
-// 	down = true;
-//
-// }
 
 function minskaOpacitet() {
     var fade = $(this).children()[0];
@@ -380,13 +385,10 @@ function taBortOnodigaPilarOchJusteraFadeBredd() {
 
     for (var i = 0; i < textIbox.length; i++) {
 
-
         var fadeWidth = boxWidth - pilWidth;
         var textIboxHojd = $(textIbox[i]).css("height");
         //console.log("text " + i + " " + textIboxHojd);
         var boxhojd = $(box[i]).css("height");
-
-
 
         textIboxHojd = parseInt(textIboxHojd);
         boxhojd = parseInt(boxhojd);
@@ -410,54 +412,3 @@ function taBortOnodigaPilarOchJusteraFadeBredd() {
     }
 
 }
-
-
-function procentTillPixlar() {
-    var sidlangdKlickbarBild = $("#klickbarBild").height();
-
-    var cirkel1 = $(".cirkelLank")[0];
-    var cirkel2 = $(".cirkelLank")[1];
-    var cirkel3 = $(".cirkelLank")[2];
-
-    //cirkel 1
-    var cirkel1Top = sidlangdKlickbarBild * -0.42;
-    var cirkel1Left = sidlangdKlickbarBild * 0.48;
-    $(cirkel1).css("top", cirkel1Top);
-    $(cirkel1).css("left", cirkel1Left);
-
-
-    //cirkel 2
-    var cirkel2Top = sidlangdKlickbarBild * -0.67;
-    var cirkel2Left = sidlangdKlickbarBild * 0.46;
-    $(cirkel2).css("top", cirkel2Top);
-    $(cirkel2).css("left", cirkel2Left);
-
-    //cirkel 3
-    var cirkel3Top = sidlangdKlickbarBild * -0.88;
-    var cirkel3Left = sidlangdKlickbarBild * 0.58;
-    $(cirkel3).css("top", cirkel3Top);
-    $(cirkel3).css("left", cirkel3Left);
-
-
-
-
-
-
-
-
-
-    // console.log("höjd: " + sidlangdKlickbarBild);
-    // console.log("bredd: " + sidlangdKlickbarBild);
-
-}
-
-
-
-
-
-
-
-
-
-document.addEventListener("scroll", scroll);
-document.addEventListener("scroll", scrollarNer);

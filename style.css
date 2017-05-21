@@ -2,14 +2,6 @@
 
 /* CSS Document */
 
-
-/*
-Rubrik: Stencil Std
-Meny: Tempus Sans ITC (Neucha från google fonts)
-
-
-*/
-
 @font-face {
     font-family: 'stencilregular';
     src: url('fonter/stencil-webfont.woff2') format('woff2'), url('fonter/stencil-webfont.woff') format('woff');
@@ -24,50 +16,36 @@ img {
 html {
     font-size: 62.5%;
 }
-
 * {
     margin: 0;
     padding: 0;
 }
-
 #storbox {
     height: 100%;
     width: 100%;
     position: absolute;
 }
 
-
 /*Rubrik + Meny*/
-
 #topp {
-    height: 60px;
     height: 6rem;
     width: 100%;
-    border-bottom: 3px solid red;
     border-bottom: 0.3rem solid red;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-end;
-    /*sätter nav i botten av #topp */
-    /*overflow: hidden;*/
     position: fixed;
     z-index: 1;
     background-color: white;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
 }
 
-
 /**    Rubrik     **/
-
 header {
     height: 100%;
     flex-grow: 1, 5;
-    /*min-width: 400px;
-  min-width: 40rem;*/
     background-color: white;
-    /*parent till img och bankpresssvartvit*/
-    display: flex;
-    align-items: flex-end;
-    /*lägger bänken längst ner*/
+    display: flex; /*parent till img och bankpresssvartvit*/
+    align-items: flex-end; /*lägger bänken längst ner*/
 }
 header a {
     text-decoration: none;
@@ -77,7 +55,6 @@ header a {
     padding-right: 10px;
     padding-right: 1rem;
 }
-
 #huvudrubrik {
     font-family: stencilregular;
     /*font-size: 50px;*/
@@ -86,62 +63,44 @@ header a {
     color: red;
     line-height: 75%;
 }
-
 #menyknapp {
     height: 0;
     width: 0;
 }
 
-
 /**    Meny:   **/
-
 nav {
     flex-grow: 1;
-    /*som parent*/
     display: flex;
     justify-content: flex-end;
-    /* #meny lägger sig till höger*/
 }
-
 #meny {
-    /* det är en ul*/
     list-style-type: none;
-    width: 350px;
     width: 35rem;
-    /*parent till li*/
     display: flex;
     justify-content: space-around;
     align-items: flex-end;
-    /*lägger menyn längst ner*/
 }
-
 .menylank {
     font-family: 'Neucha', cursive;
-    font-size: 22px;
     font-size: 2.2rem;
     color: black;
     text-decoration: none;
 }
-
 .menylank:hover {
     text-decoration: underline;
 }
-
 #aktiv {
     color: red;
     text-decoration: underline;
     font-weight: bold;
 }
-
 article {
     width: 100%;
     height: 100%;
-    /*padding-top: 50px;*/
     padding-top: 7rem;
     box-sizing: border-box;
 }
-
-
 
 /****  Bildspel ****/
 
@@ -150,42 +109,31 @@ article {
     border: 0.5rem solid red;
     border-radius: 0.4rem;
     margin: auto;
-    /*margin-top: 10rem;
-*/
     max-width: 766px;
     width: 100%;
 }
-
 .inaktivBild {
     width: 0%;
 }
-
 .aktivBild {
     width: 100%;
 }
-
 #undertext {
-    height: 60px;
     height: 6rem;
     max-width: 766px;
-    background-color: rgb(90, 90, 90);
     background-color: black;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-
 #bildNamn {
-
     font-size: 4rem;
     padding-top: 1rem;
     padding-left: 1rem;
     color: white;
     font-family: 'Neucha', cursive;
-
-
 }
-#bildNamnMobil{
+#bildNamnMobil {
     font-size: 4rem;
     padding-left: 1rem;
     color: black;
@@ -194,64 +142,50 @@ article {
     font-family: 'Neucha', cursive;
 }
 #kontroller {
-
     height: 6rem;
     width: 23rem;
     display: flex;
     margin-right: 10px;
-    display: flex;
     justify-content: space-between;
     align-items: center;
 }
 #pilbox {
-
     height: 6rem;
     width: 10rem;
-    display: flex;
     margin-right: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-
 .bildspelspil {
     height: 70%;
     cursor: pointer;
 }
-.playPause{
+.playPause {
     height: 120%;
     cursor: pointer;
 }
 
-
 /*** Infobox ***/
-
 .infobox {
-    /*border: 0.5rem solid red;*/
     margin-top: 2rem;
 }
-
 .infoboxMinusPilar {
     box-sizing: border-box;
     width: 100%;
-    max-height: 30rem;
-    /*auto för att expandera*/
-    /*height: auto;*/
-    border-radius: 0.5rem;
+    max-height: 30rem; /*auto för att expandera*/
     overflow: hidden;
     border: 0.5rem solid red;
+    border-radius: 0.5rem;
 }
-
 .platsForRubrikOchBild {
     height: 30rem;
     float: left;
 }
-
 .platsForRubrikOchBild img {
     height: 70%;
     padding: 0 2rem 0 2rem;
 }
-
 .infoboxMinusPilar h2 {
     height: 20%;
     display: block;
@@ -260,29 +194,23 @@ article {
     text-align: center;
     font-family: stencilregular;
     color: red;
-
 }
-
 .infoboxMinusPilar p {
     font-size: 3rem;
     padding: 1rem;
-    /*padding: 3rem;*/
 }
-.infoboxMinusPilar h3{
+.infoboxMinusPilar h3 {
     font-size: 3rem;
     padding-left: 1rem;
 }
-.infoboxMinusPilar #tillbehorlista{
+.infoboxMinusPilar #tillbehorlista {
     list-style-position: inside;
     font-size: 3rem;
     padding: 1em;
 }
-
 .pil:hover {
     width: 2.9%;
-    /*right: 0.1%;*/
 }
-
 .uppNerPilar {
     height: 4rem;
     width: 100%;
@@ -294,66 +222,47 @@ article {
     align-items: flex-end;
     justify-content: flex-end;
 }
-
 .fadebox {
-
     width: 96%;
-
-    /*100% -5rem*/
     height: 5rem;
     position: relative;
-
     display: flex;
     align-items: flex-end;
 }
-
 .fade {
     width: 100%;
     height: 5rem;
-
 }
-
 .pil {
     width: 4%;
     min-width: 5rem;
-    /*height: 4rem;*/
     height: auto;
     padding-bottom: 0.2rem;
-
     position: relative;
     box-sizing: border-box;
     background-color: white;
 }
-
 #regler, #tillbehor {
     padding: 10rem 5rem 0 5rem;
 }
-
 .textlank {
     font-family: 'Neucha', cursive;
     font-size: 3rem;
     color: black;
     text-decoration: none;
-
 }
-
 .textlank:hover, .textlank:active {
     text-decoration: underline;
 }
-
 #regler a:active {
     color: red;
 }
-.lankdestination{
+.lankdestination {
     position: relative;
     top: -6rem;
 }
 
-
 /*** Tillbehör ***/
-
-#tillbehor {}
-
 #bilderOchCirklar {
     margin: auto;
     width: 40%;
@@ -362,11 +271,9 @@ article {
     border: 0.5rem solid red;
     border-radius: 0.4rem;
 }
-
 #klickbarBild {
     width: 100%;
 }
-
 .cirkelLank {
     width: 15%;
     height: 15%;
@@ -375,7 +282,6 @@ article {
     top: 15%;
     margin-bottom: -15%;
 }
-
 .cirkel {
     height: 100%;
     width: 100%;
@@ -389,49 +295,59 @@ article {
     font-size: 3rem;
     text-align: center;
 }
+
+
 /***Styrkelyftare***/
-#varldsmastare{
+
+#varldsmastare {
     display: flex;
+    justify-content: space-around;
     flex-wrap: wrap;
 }
+
 .styrkelyftare {
     display: block;
     list-style-type: none;
     padding: 1rem;
-
 }
-.styrkelyftare li{
-    font-size: 3rem;
+
+.styrkelyftare li {
+    font-size: 2.5rem;
     box-sizing: border-box;
     border-bottom: 0.2rem solid red;
-
 }
 
-.svar{
+.svar {
     float: right;
     padding-left: 3rem;
 }
-.varldsmastarebox{
-    width: 450px;
-    width: auto;
-    margin: auto;
-    max-height: 4000px;
+
+.varldsmastarebox {
+    max-width: 500px;
+    padding: 1rem;
+    max-height: auto;
     box-sizing: border-box;
     border: 0.5rem solid red;
     border-radius: 0.5rem;
     margin-top: 5rem;
 }
+
 .varldsmastarebox .platsForRubrikOchBild {
     height: auto;
     width: 100%;
     box-sizing: border-box;
 }
+
 .varldsmastarebox .platsForRubrikOchBild img {
     height: 20rem;
     margin: auto;
-    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+    border: 0.3rem solid red;
+    border-radius: 0.3rem;
+    padding: 0;
 }
-.varldsmastarebox .platsForRubrikOchBild h2{
+
+.varldsmastarebox .platsForRubrikOchBild h2 {
     font-size: 3rem;
     text-align: center;
     font-family: stencilregular;
@@ -496,12 +412,9 @@ article {
         background-color: white;
         margin: 0;
         padding: 0.7rem;
-        /*padding: 0.3rem;*/
-        /*font-size: 22px;*/
         font-size: 2.2rem;
         color: black;
         text-decoration: none;
-        /*font-size: 30px;*/
         font-size: 4rem;
     }
     nav:last-child {
@@ -514,14 +427,8 @@ article {
     #bildspel {
         border-right: 0;
         border-left: 0;
-
     }
-
-
-
 }
-
-
 
 @media screen and (max-width: 540px) {
     #bilderOchCirklar {
@@ -547,53 +454,40 @@ article {
         height: 20rem;
         margin: auto;
     }
-    .varldsmastarebox{
+    .varldsmastarebox {
         width: 100%;
     }
-
-    #undertext{
+    #undertext {
         justify-content: center;
     }
-
-}
-
-@media screen and (max-width: 400px) {
-    html {
-        font-size: 40%;
-    }
-    /*#menyknapp{
-    margin-right: 5rem;
-  }*/
 }
 
 @media screen and (max-width: 350px) {
     html {
-        font-size: 35%;
+        font-size: 30%;
     }
-    #menyknapp {}
 }
 
-
-/*
-@media screen and (max-height: 400px){
-  #topp{
-    position: relative;
-
-
-  }
-  article{
-    padding-top: 0;
-    margin-top: 0;
-
-  }
-  #bildspel{
-    width: auto;
-    height: 50%;
-    margin-top: 0;
-    padding-top: 0;
-  }
-  img{
-    height: 100%;
-  }
+@media screen and (max-width: 300px) {
+    html {
+        font-size: 25%;
+    }
 }
-*/
+
+@media screen and (max-width: 250px) {
+    html {
+        font-size: 20%;
+    }
+}
+
+@media screen and (max-width: 200px) {
+    html {
+        font-size: 15%;
+    }
+}
+
+@media screen and (max-width: 150px) {
+    html {
+        font-size: 10%;
+    }
+}
