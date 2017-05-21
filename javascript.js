@@ -247,11 +247,11 @@ function expanderaRegelbox() {
 
     if ($(kanskeFade).attr("class") == "fade") {
         var fade = $(this).children()[0];
-        var infoboxMinusPilar = $($(this).parents([0])).prev();
+        var infoboxMinusPilar = $($(this).parents([0])).prev()[0];
         var uppNerPilar = $($(infoboxMinusPilar).siblings()[0]).children()[1];
 
     } else {
-        var infoboxMinusPilar = $(this).parent();
+        var infoboxMinusPilar = $(this).parent()[0];
         var fade = $($($(infoboxMinusPilar).siblings()[0]).children()[0]).children()[0];
         var uppNerPilar = $($(infoboxMinusPilar).siblings()[0]).children()[1];
     }
@@ -271,6 +271,7 @@ function expanderaRegelbox() {
     }, 0);
 
 	uppNerPilar.src = "bilder/PilUpp.png";
+
 
 
 
@@ -338,20 +339,21 @@ function taBortOnodigaPilarOchJusteraFadeBredd() {
     var boxWidth = $(box[0]).width();
     var fadebox = $(".fadebox");
 
-    var fadeWidth = boxWidth - pilWidth;
+    var boxBild = $(".infoboxMinusPilar img");
 
-    // console.log("fadewith: " + fadeWidth);
-    // console.log("PilWidth: " + pilWidth);
-    // console.log("BoxWidth: " + boxWidth);
-    // console.log("fadebox: " + fadebox);
+    var bildpadding = $($(".platsForRubrikOchBild img")[0]).css("padding-left");
+    bildpadding = parseInt(bildpadding);
+
 
     for (var i = 0; i < textIbox.length; i++) {
+
+
+        var fadeWidth = boxWidth - pilWidth;
         var textIboxHojd = $(textIbox[i]).css("height");
         //console.log("text " + i + " " + textIboxHojd);
-        var boxhojd = $(box[i]).css("height")
+        var boxhojd = $(box[i]).css("height");
 
-        $(fadebox[i]).css("width", fadeWidth);
-        $($(".pil")[i]).css("margin-right", "1.4rem");
+
 
         textIboxHojd = parseInt(textIboxHojd);
         boxhojd = parseInt(boxhojd);
@@ -365,8 +367,12 @@ function taBortOnodigaPilarOchJusteraFadeBredd() {
             } else {
                 $(uppNerPilar[i]).css("opacity", "100");
             }
+            boxBildBredd = $(boxBild[i]).width()
+            fadeWidth = boxWidth - pilWidth - boxBildBredd - bildpadding - 5;
 
         }
+        $(fadebox[i]).css("width", fadeWidth);
+        $($(".pil")[i]).css("margin-right", "1.4rem");
 
     }
 
