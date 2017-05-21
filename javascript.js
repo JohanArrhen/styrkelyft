@@ -3,7 +3,8 @@ var storRubrik = true;
 var bildnummer;
 var foregaendeScrollPosition;
 var nuvarandeScrollPosition,
-    nedatscroll;
+    nedatscroll,
+    bildspelsTimer;
 
 window.onload = function() {
     procentTillPixlar();
@@ -23,10 +24,12 @@ window.onload = function() {
 
     $(".fadebox").hover(minskaOpacitet, okaOpacitet);
 
-    var bilder = $(".bildspel");
-
+    //Bildspel
+    bildspelsTimer = setInterval(bildBytePlus, 2000)
     $("#hoger").on("click", bildBytePlus);
+    $("#hoger").on("click", stoppaBildspelsTimer);
     $("#vanster").on("click", bildByteMinus);
+    $("#vanster").on("click", stoppaBildspelsTimer);
 
 
 };
@@ -72,6 +75,10 @@ function bildByteMinus() {
     }
     var lyftarnamn = bilder[bildnummer].alt.replace(/bild på/i, "");
     $("#bildNamn").html(lyftarnamn);
+
+}
+function stoppaBildspelsTimer() {
+    clearTimeout(bildspelsTimer);
 
 }
 
