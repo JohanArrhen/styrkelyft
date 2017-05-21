@@ -87,6 +87,22 @@ nav {
     justify-content: flex-end;
 }
 
+#barbell {
+    pointer-events: none;
+    float: right;
+    height: 6rem;
+    width: 20%;
+
+    z-index: 1;
+    opacity: 0.4;
+
+    position: fixed;
+    left: 80%;
+
+
+
+}
+
 #meny {
     list-style-type: none;
     width: 35rem;
@@ -409,6 +425,9 @@ article {
     }
     #bankpressSvartvit {
         display: none;
+    }
+    #barbell{
+        width: 0;
     }
     #topp {
         height: auto;

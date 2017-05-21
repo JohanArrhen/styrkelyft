@@ -66,6 +66,9 @@ function andraHeaderhojd() {
         $("#topp").animate({
             "height": "3rem"
         }, 100);
+        $("#barbell").animate({
+            "top": "-6rem"
+        }, 200);
         storRubrik = false;
     } else {
         $("#huvudrubrik").animate({
@@ -74,6 +77,9 @@ function andraHeaderhojd() {
         $("#topp").animate({
             "height": "6rem"
         }, 100);
+        $("#barbell").animate({
+            "top": "0"
+        }, 300);
         storRubrik = true;
     }
 }
